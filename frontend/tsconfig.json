@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "src/views/Projet/DatasetPage.tsx", "src/views/Projet/ProjetPage.tsx", "src/views/Projet/AnalysePage.tsx", "src/views/Projet/RapportPage.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
