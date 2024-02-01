@@ -13,7 +13,7 @@ const MenuList = () => {
         <Menu.Item key="catalogue">Catalogues</Menu.Item>
         <Menu.Item key="datasets">Datasets</Menu.Item>
         <Menu.Item key="analyses">Analyses</Menu.Item>
-        <Menu.Item key="rapports">Rappotrs</Menu.Item>
+        <Menu.Item key="rapports">Rapports</Menu.Item>
       </Menu.SubMenu>
       <Menu.Item key="mes-datasets" icon={<DatabaseOutlined />}>
         Mes Datasets
