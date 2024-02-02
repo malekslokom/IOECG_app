@@ -1,13 +1,15 @@
-import React from 'react'
+// components/Card/ModelCard.tsx
+import React from 'react';
 import "./ModelCard.css";
 
 interface ModelCardProps {
   model: Model;
+  onClick: () => void; 
 }
 
-const ModelCard: React.FC<ModelCardProps> = ({ model }) => {
+const ModelCard: React.FC<ModelCardProps> = ({ model, onClick }) => {
   return (
-    <div className="card-container">
+    <div className="card-container" onClick={onClick}> 
       <div className="card" style={{ width: '18rem' }}>
         <div className="card-body">
           <h5 className="card-title">{model.name}</h5>
