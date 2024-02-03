@@ -1,14 +1,16 @@
 import React from "react";
 import NavBar from "./components/NavBar/NavBar";
 import SideMenu from "./components/SideBar/SideMenu";
-import CataloguePage from "./views/Catalogue/CataloguePage";
+import AcceuilPage from "./views/Acceuil/AcceuilPage";
+import ListProjetsPage from "./views/ListProjets/ListProjetsPage";
 
 function App() {
   return (
     <div className="container">
       <NavBar />
       <SideMenu />
-      {/* <CataloguePage /> */}
+      {/*<ListProjetsPage />*/}
+      {/*<AcceuilPage/>*/}
     </div>
   );
 }
