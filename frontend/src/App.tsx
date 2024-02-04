@@ -11,6 +11,8 @@ function App() {
       <SideMenu />
       {/*<ListProjetsPage />*/}
       {/*<AcceuilPage/>*/}
+      {/*<CataloguePage/>*/}
+      {/*<ListProjetsPage/>*/}
     </div>
   );
 }

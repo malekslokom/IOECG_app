@@ -5,15 +5,22 @@ import ListProjets from '../../components/ListProjets/ListProjets';
 
 const ListProjetsPage = () => {
 
-let acc: {[key: string]: string}={};
+  let projects: any[]=[];
+
+  for (let i = 0; i<5; i++){
+    let acc: {[key: string]: string}={};
 acc.name="projet1";
 acc.creationDate="10/12/2023";
 acc.author="Andy";
 acc.version="v1";
 acc.type="Classification";
 
+projects.push(acc);
+  }  
 
-const projects: any[]=[acc, {name:"projet1",creationDate:"10/12/2023",author:"Andy",version:"v1",type:"Classification"}];
+
+
+
 
 
   return (
