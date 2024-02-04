@@ -12,7 +12,7 @@ function App() {
       {/*<ListProjetsPage />*/}
       {/*<AcceuilPage/>*/}
       {/*<CataloguePage/>*/}
-      {/*<ListProjetsPage/>*/}
+      <ListProjetsPage/>
     </div>
   );
 }

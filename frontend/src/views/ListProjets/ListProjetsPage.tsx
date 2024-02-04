@@ -7,7 +7,7 @@ const ListProjetsPage = () => {
 
   let projects: any[]=[];
 
-  for (let i = 0; i<5; i++){
+  for (let i = 0; i<6; i++){
     let acc: {[key: string]: string}={};
 acc.name="projet1";
 acc.creationDate="10/12/2023";
