@@ -8,7 +8,7 @@ import HistoriquePage from "./views/Historique/HistoriquePage";
 import ListProjets from "./components/ListProjets/ListProjets";
 import CataloguesPage from "./views/Catalogue/CataloguePage";
 import DatasetsPage from "./views/Datasets/DatasetsPage";
-import AnalysesPage from "./views/Analyses/AnalysesPage";
+import AnalysesPage from "./views/Analyses/AnalysePage";
 import RapportPage from "./views/Rapport/RapportPage";
 const { Content } = Layout;
 function App() {
