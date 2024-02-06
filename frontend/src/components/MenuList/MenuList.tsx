@@ -53,25 +53,12 @@ const MenuList = ({ theme }: Props) => {
     },
   ];
   return (
-    <Menu mode="inline" theme="light" className="menu-bar">
-      <Menu.SubMenu
-        title="Projets"
-        key="project"
-        onTitleClick={() => console.log("clicked")}
-        icon={<ProjectOutlined />}
-      >
-        <Menu.Item key="catalogue">Catalogues</Menu.Item>
-        <Menu.Item key="datasets">Datasets</Menu.Item>
-        <Menu.Item key="analyses">Analyses</Menu.Item>
-        <Menu.Item key="rapports">Rapports</Menu.Item>
-      </Menu.SubMenu>
-      <Menu.Item key="mes-datasets" icon={<DatabaseOutlined />}>
-        Mes Datasets
-      </Menu.Item>
-      <Menu.Item key="historique" icon={<HistoryOutlined />}>
-        Historique
-      </Menu.Item>
-    </Menu>
+    <Menu
+      mode="inline"
+      theme={theme ? "dark" : "light"}
+      className="menu-bar"
+      items={menuItems}
+    ></Menu>
   );
 };
 

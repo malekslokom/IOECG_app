@@ -5,4 +5,10 @@
   transition: background-color 250ms ease-in-out;
  background-color: var(--background-color);
 }
+.card {
+  padding: 2em;
+}
 
+.read-the-docs {
+  color: #888;
+}
