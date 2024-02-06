@@ -1,0 +1,35 @@
+.card-content {
+    padding: 10px;
+    background-color: white; /* Pour le cadre blanc */
+    border-radius: 8px; /* Bords arrondis */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Espace en dessous du header */
+    border-radius: 4%;
+  }
+  
+  .project-image {
+    width: 50px; /* Ou la taille que vous souhaitez */
+    height: 50px; /* Ou la taille que vous souhaitez */
+    border-radius: 50%; /* Pour rendre l'image ronde */
+  }
+  
+  .project-description {
+    padding: 10px;
+    background-color: #f0f0f0; /* Pour le cadre de la description */
+    border-radius: 4px; /* Bords arrondis */
+    margin-top: 20px; /* Espace au-dessus du cadre */
+  }
+
+  .detail-title {
+    margin-right: 20%; 
+  }
+
+ 
+  
+  

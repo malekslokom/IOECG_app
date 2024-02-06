@@ -5,11 +5,13 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "antd";
 import HistoriquePage from "./views/Historique/HistoriquePage";
-import ListProjets from "./components/ListProjets/ListProjets";
 import CataloguesPage from "./views/Catalogue/CataloguePage";
 import DatasetsPage from "./views/Datasets/DatasetsPage";
 import AnalysesPage from "./views/Analyses/AnalysePage";
 import RapportPage from "./views/Rapport/RapportPage";
+import ListProjetsPage from "./views/ListProjets/ListProjetsPage";
+import AcceuilPage from "./views/Acceuil/AcceuilPage";
+import ConsulterProjetPage from "./views/ConsulterProjet/ConsulterProjetPage";
 const { Content } = Layout;
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -34,7 +36,9 @@ function App() {
           <SideMenu theme={isDark} />
           <Content style={{ marginLeft: 10 }}>
             <Routes>
-              {/* <Route path="/" element={<ListProjets />} /> */}
+              <Route path="/" element={<AcceuilPage/>} /> 
+              <Route path="/list-projets" element={<ListProjetsPage/>} /> 
+              {/*<Route path="/projets/consulter-projet" element={<ConsulterProjetPage/>} /> */}
               <Route path="/projets/catalogues" element={<CataloguesPage />} />
               <Route path="/projets/datasets" element={<DatasetsPage />} />
               <Route path="/projets/analyses" element={<AnalysesPage />} />

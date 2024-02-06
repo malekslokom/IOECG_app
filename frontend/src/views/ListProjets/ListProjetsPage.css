@@ -1,15 +1,15 @@
 .Bloc {
     position: absolute;
-    left: 21%;
-    top: 14%;
-    right: 20%;
-    width: 71%;
-    height: 97%; 
+    left: 11.3%;
+    top: 9%;
+    right: 0%;
+    width: 88%;
+    height: 100%; 
     background-color: white;
     
   }
   
   .Bloc1 {
     margin-bottom: 15%; 
-    margin-top: 3%;
+    margin-top: 0%;
   }
