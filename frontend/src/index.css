@@ -5,6 +5,13 @@
   --secondary-text-color: #cecece;
   --border-radius: 8px;
   --speed: 500ms;
+  --background-color: #ffff;
+  --foreground-color: #003cff;
+  --toggle-bg: #f0eb9d;
+  --toggle-fg:#ffd000;
+  --hover-color: #fff;;
+  --toggle-fg-hover:#EA0909;
+
 }
 
 .model-list-container {
@@ -20,3 +27,19 @@ h2 {
   font-size: 22px;
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+[data-theme="dark"] {
+  --primary-bg:#283452;
+  --background-color: #001529;
+  --secondary-bg: #001529;
+  --foreground-color: #567aff;
+  --primary-text-color: #f6f6f6;
+  --secondary-text-color: #001529;
+  --toggle-bg: #283452;
+  --toggle-fg:#00a6ff;
+  --toggle-fg-hover:#1677ff;
+  --hover-color: #f6f6f6;
+}

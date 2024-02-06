@@ -1,15 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./NavBar.css";
 import DropdownItem from "../DropDownItem/DropDownItem"; // Make sure to adjust the import path
-import user from "../../assets/user.png";
 import userExemple from "../../assets/exemple-user.png";
-import edit from "../../assets/edit.png";
 import logo from "../../assets/IRD.png";
-import inbox from "../../assets/envelope.png";
-import settings from "../../assets/settings.png";
-import help from "../../assets/question.png";
-import logout from "../../assets/log-out.png";
-const NavBar = () => {
+import { SettingOutlined, LogoutOutlined } from "@ant-design/icons";
+import Toggle from "../Toggle/Toggle";
+import useLocalStorage from "use-local-storage";
+interface Props {
+  theme: boolean;
+  onThemeChange: (isDark: boolean) => void;
+}
+const NavBar = ({ theme, onThemeChange }: Props) => {
+  const [isDark, setIsDark] = useLocalStorage("isDark", theme);
+
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -34,11 +37,13 @@ const NavBar = () => {
     <div className="navbar-container">
       <nav className="navbar">
         <div className="menu-container" ref={menuRef}>
-          <img style={{ height: "80px", width: "auto" }} src={logo} />
+          <img style={{ height: "70px", width: "auto" }} src={logo} />
+
           <div className="menu-trigger" onClick={handleToggle}>
             <p>Andy</p>
             <img src={userExemple} />
           </div>
+
           <div className={`dropdown-menu ${open ? "active" : "inactive"}`}>
             <h3>
               Andy
@@ -46,12 +51,26 @@ const NavBar = () => {
               <span>andy@gmail.com</span>
             </h3>
             <ul>
-              <DropdownItem img={settings} text="Settings" />
-              <DropdownItem img={logout} text="Logout" />
+              <DropdownItem
+                icon={<SettingOutlined />}
+                text="Paramètres"
+                color={isDark}
+              />
+              <DropdownItem
+                icon={<LogoutOutlined />}
+                text="Déconnexion"
+                color={isDark}
+              />
             </ul>
           </div>
         </div>
-        <img src="../assets/logo.png" alt="" className="logo" />
+        <Toggle
+          isChecked={isDark}
+          handleChange={(isChecked) => {
+            setIsDark(isChecked);
+            onThemeChange(isChecked);
+          }}
+        />
       </nav>
     </div>
   );
