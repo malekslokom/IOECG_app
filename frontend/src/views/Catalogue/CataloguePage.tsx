@@ -23,6 +23,7 @@ const CataloguesPage: React.FC = () => {
   };
 
   return (
+    
     <div className="catalog-page">
       <h2>Catalogue des modéles</h2>
       <hr />

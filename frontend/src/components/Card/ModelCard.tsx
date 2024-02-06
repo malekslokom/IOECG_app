@@ -20,6 +20,7 @@ const ModelCard: React.FC<ModelCardProps> = ({ model, onClick }) => {
         </div>
       </div>
     </div>
+    
   );
 }
 
