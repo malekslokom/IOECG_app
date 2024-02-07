@@ -1,0 +1,114 @@
+
+/*PARAMETTRAGE TAILLE LONGEUR POSITION */
+.page {
+  position: absolute;
+  left: 31%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: white;
+  padding: 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+.okButton {
+  background-color: rgb(193, 16, 16);
+  color: white;
+  padding: 5px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  right: 10%; 
+  bottom: 0%;
+}
+
+.tab {
+  position: relative;
+  width: 95%;
+  left:0%;
+  top: 20%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-collapse: collapse;
+  border-right: 2px solid #dee2de ;
+  table-layout: auto;
+}
+
+.tab th,
+.tab td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;  
+  text-align: left;   
+  width: auto;  
+}
+.tab-container {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.ok-button-container {
+  margin-top: 20px;
+  text-align: right;
+}
+/* Style */
+.Police {
+  font-size: 15px; 
+}
+/*le trait du haut*/
+.trait {
+  width: calc(100% - 10px);
+  border: none;
+  background-color: #DADADA;
+  height: 1px;
+  position: absolute;
+  top: 4%; 
+  left: 5px;
+}
+/* Barre de recherche  */
+.custom-search {
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 70%;
+  position: absolute; 
+  top: 70%;
+  left: 50%;
+  right: 0%;
+  border-radius: 25px;
+  margin-left: 50px;
+}
+/* filtre */
+.custom-filter {
+  position: absolute ; 
+  height: 70%;
+  top: 70%; 
+  left: 175%; 
+  margin-left: 0;
+}
+/* Les paramètres pour la forme des lignes */
+.tab-striped tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tab-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.326);
+}
+/* Style pour la slide bar */
+.tab-container::-webkit-scrollbar {
+  width: 25px; 
+}
+
+.tab-container::-webkit-scrollbar-track {
+  background: #f2f2f2; 
+  border-radius: 10px;
+}
+.tab-container::-webkit-scrollbar-thumb {
+  background: #252424c4; 
+  border-radius: 10px;
+  right: 2px; 
+}
+/*parrametre pour le modal */
+

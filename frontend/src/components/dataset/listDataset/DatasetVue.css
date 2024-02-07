@@ -1,0 +1,73 @@
+.importButton {
+  background-color: rgb(193, 16, 16);
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  left: 190%; /* Ajuster cette valeur pour positionner le bouton tout à droite */
+  top: 30px; /* Vous pouvez ajuster cette valeur selon vos besoins */
+}
+  
+  .page {
+    position: absolute;
+    left:15%;
+    top: 17%;
+    right: 10%;
+    width: 82%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  }
+ 
+  .listDatasets th, .listDatasets td {
+    padding: 12px;
+    text-align: left;
+    border: none;
+
+  }
+.table {
+   position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+    top: 22%;
+}
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: bottom;
+    border-bottom: 1px solid #dee2e6;  
+    text-align: left;  
+    font-size: 15px; 
+    border-top: none; 
+}
+
+
+
+hr {
+  width: calc(100% - 10px);
+  border: none;
+  background-color: #DADADA;
+  height: 1px;
+  position: absolute;
+  top: 5%; /* Ajustement de la position en haut */
+  left: 5px;
+}
+/*Menu*/
+.filters{
+position: absolute;
+top: 23%;
+width:100%;
+height: 55px;
+left: 0%;
+}
+/*barre de recherche */
+.search-bar{
+  background-color: #f2f2f2;
+  border-radius: 25px;
+}
