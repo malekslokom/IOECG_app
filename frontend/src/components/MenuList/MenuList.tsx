@@ -42,7 +42,7 @@ const MenuList = ({ theme }: Props) => {
       icon: <DatabaseOutlined />,
     },
     {
-      label: "Mes Catalogues",
+      label: <Link to="/projets/catalogues">Mes Catalogues</Link>,
       key: "mes-catalogues",
       icon: <BookOutlined />,
     },
