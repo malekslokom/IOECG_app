@@ -14,4 +14,11 @@ interface Model {
     architectureImage: string;
     taskNature: string;
   }
+
+interface Analyse {
+  name: string;
+  description: string;
+  author: string;
+  dateCreation: string ;
+}
   

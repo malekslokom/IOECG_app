@@ -33,6 +33,10 @@ h2 {
   cursor: pointer;
 }
 
+.add-button:hover {
+  background-color: #cc0000;
+}
+
 hr {
   width: 100%;
   border: none;
@@ -43,3 +47,9 @@ hr {
   left: 0;
 }
 
+
+.list-analyse-container{ 
+  top: 70px;
+  position: relative;
+  border: none;
+}

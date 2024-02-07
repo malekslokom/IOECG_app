@@ -1,0 +1,85 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond gris */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container{
+    background-color: white;
+    border-radius: 10px;
+    width: 761px;
+    height: 619px;
+  }
+  
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc; /* Bordure en dessous du titre */
+    padding-bottom: 10px; /* Espace sous le titre */
+    margin-bottom: 20px; /* Marge en bas du titre */
+    padding-left: 40px; /* Marge à gauche du titre */
+    top: 20px;
+  }
+  
+  .modal-header span {
+    font-size: 22px;
+  }
+
+  
+  .close-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: 808EA7;
+    padding: 0 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    width: 609px;
+    font-size: 16px;
+    
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    margin-left: 40px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 112%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 40px;
+    background-color: D7DAE0;
+  }
+  
+  .form-group textarea.description {
+    height: 50%;
+  }
+
+  .create-btn {
+    background-color: #E30613; /* Bouton rouge */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 50px; /* Espacement par rapport aux éléments précédents */
+    width: 281px;
+    height: 37px;
+  }
+  

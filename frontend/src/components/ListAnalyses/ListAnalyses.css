@@ -1,0 +1,39 @@
+.list-analyses {
+    background-color: #ffffff; /* Fond blanc */
+    padding: 20px; /* Espacement interne */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    font-weight: bold; /* Ajout de la mise en gras pour les entêtes */
+    font-size: 16px; /* Ajustement de la taille de police pour les entêtes */
+    border-bottom: 1px solid #dadada;
+}
+
+
+.action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.action-button:focus {
+    outline: none;
+}
+
+.separator-row {
+    width: 97%;
+    border: none;
+    margin: 0;
+    left: 20px;
+}
