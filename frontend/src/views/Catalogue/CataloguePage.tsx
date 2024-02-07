@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchModels } from '../../services/ApiService';
 import ModelCard from '../../components/Card/ModelCard';
 import ModelModal from '../../components/Modals/ModelModal';
+import './CataloguePage.css'
 
 const CataloguesPage: React.FC = () => {
   const [models, setModels] = useState<Model[]>([]);
@@ -23,18 +24,19 @@ const CataloguesPage: React.FC = () => {
   };
 
   return (
-    
-    <div className="catalog-page">
-      <h2>Catalogue des modéles</h2>
-      <hr />
-      
-      <div className="model-list-container">
-        {models.map(model => (
-          <ModelCard key={model.name} model={model} onClick={() => handleCardClick(model)} />
-        ))}
-      </div>
+    <div className='catalog-page'>
+        <div className="content-head">
+            <h2>Catalogue des modéles</h2>
+           
+        </div>
+        <hr />
+        <div className="model-list-container">
+          {models.map(model => (
+            <ModelCard key={model.name} model={model} onClick={() => handleCardClick(model)} />
+          ))}
+        </div>
 
-      {selectedModel && <ModelModal model={selectedModel} onClose={closeModal} />}
+        {selectedModel && <ModelModal model={selectedModel} onClose={closeModal} />}
     </div>
   );
 };

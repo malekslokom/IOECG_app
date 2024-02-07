@@ -13,6 +13,9 @@
     border-radius: 10px;
   }
   
+  .card-title{
+    margin-top: 0%;
+  }
   
   .card:hover {
     transform: rotateY(5deg);

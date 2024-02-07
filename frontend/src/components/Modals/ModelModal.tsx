@@ -17,9 +17,8 @@ const ModelModal: React.FC<ModelModalProps> = ({ model, onClose }) => {
       footer={null}
       width={600}
     >
-      <hr />
 
-      <div className="modal-body">
+      <div className="modal-body">       
         <div className="modal-section">
           <p className="modal-section-title">Informations sur le modèle</p>
           <div className="section-box">
