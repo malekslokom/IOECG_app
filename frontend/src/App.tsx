@@ -12,6 +12,7 @@ import RapportPage from "./views/Rapport/RapportPage";
 import ListProjetsPage from "./views/ListProjets/ListProjetsPage";
 import AcceuilPage from "./views/Acceuil/AcceuilPage";
 import ConsulterProjetPage from "./views/ConsulterProjet/ConsulterProjetPage";
+import DatasetProjet from "./views/DatasetProjet/DatasetProjet";
 const { Content } = Layout;
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -40,7 +41,7 @@ function App() {
               <Route path="/list-projets" element={<ListProjetsPage/>} /> 
               {/*<Route path="/projets/consulter-projet" element={<ConsulterProjetPage/>} /> */}
               <Route path="/projets/catalogues" element={<CataloguesPage />} />
-              <Route path="/projets/datasets" element={<DatasetsPage />} />
+              <Route path="/projets/datasets" element={<DatasetProjet />} />
               <Route path="/projets/analyses" element={<AnalysesPage />} />
               <Route path="/projets/rapports" element={<RapportPage />} />
               <Route path="/mes-catalogues" element={<CataloguesPage />} />

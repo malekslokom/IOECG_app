@@ -15,8 +15,8 @@ const DatasetProjet: React.FC = () => {
   };
 
   return (
-    <div className="catalog-page">
-      <div className="model-list-container">
+    <div >
+      <div >
         <DatasetVue onOpen={handleImportClick} />
       </div>
       
