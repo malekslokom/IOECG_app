@@ -50,6 +50,7 @@ img{
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px; /* Correspond à 'row' */
+    
   }
   
   .col-6 {
@@ -65,6 +66,7 @@ img{
     width: 93%;
     padding-right: 15px;
     padding-left: 15px; /* Correspond à 'col-12' */
+    
   }
   
   .text-right {
@@ -124,4 +126,9 @@ img{
     margin-right: 16px; /* ou l'espacement que vous préférez */
   }
   
+  .filters {
+    margin-right: 16px; /* ou l'espacement que vous préférez */
+    margin-top: -6%;
+  }
+ 
  

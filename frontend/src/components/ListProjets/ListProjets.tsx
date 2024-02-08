@@ -55,7 +55,7 @@ const ListProjets = ({ projects}:ListProjetsProps) => {
           </div>
           <br /> 
         </div>
-        <hr/><br/>
+        {/*<div style={{marginRight: "10%"}}><hr/></div>*/}<br/>
         
         <div className="container-fluid">
           <div className="row">
@@ -107,7 +107,7 @@ const ListProjets = ({ projects}:ListProjetsProps) => {
                 
               </div>
               <br/><br/>
-              <hr/>
+              {/*<hr/>*/}
               <br/><br/><br/>
            
 
@@ -139,7 +139,7 @@ const ListProjets = ({ projects}:ListProjetsProps) => {
                   ))}
                 </tbody>
               </table>
-              <br/><br/>
+              <br/><br/><br/>
               <div style={{ textAlign: 'right'}}>
               <Pagination
                 defaultCurrent={1}

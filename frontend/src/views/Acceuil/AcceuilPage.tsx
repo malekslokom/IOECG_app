@@ -24,6 +24,7 @@ const AcceuilPage = () => {
             
        </div>
        <hr className='hr'/>
+       <br/><br/>
        <div className="no-project-section">
         <img src={noProject} alt="No Project Found" className='noProject'/>
         <h4 className='welcome-section'>Nous supposons que c'est votre première fois ! <br/>Créez un projet maintenant pour commencer !</h4>

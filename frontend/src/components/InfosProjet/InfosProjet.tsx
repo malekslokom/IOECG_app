@@ -27,7 +27,7 @@ const InfosProjet = ({ project }: InfosProjetProps) => {
     >
       <div className="card-content">
         <div className="card-header">
-          <h2 className="detail-title">{project.name}</h2>
+          <h2 className="detail-title t1">{project.name}</h2>
           <img src={projet} alt={project.name} className="project-image" />
           
         </div>

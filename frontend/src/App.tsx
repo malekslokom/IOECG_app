@@ -39,7 +39,7 @@ function App() {
             <Routes>
               <Route path="/" element={<AcceuilPage/>} /> 
               <Route path="/list-projets" element={<ListProjetsPage/>} /> 
-              {/*<Route path="/projets/consulter-projet" element={<ConsulterProjetPage/>} /> */}
+              <Route path="/projets/consulter-projet" element={<ConsulterProjetPage/>} /> 
               <Route path="/projets/catalogues" element={<CataloguesPage />} />
               <Route path="/projets/datasets" element={<DatasetProjet />} />
               <Route path="/projets/analyses" element={<AnalysesPage />} />

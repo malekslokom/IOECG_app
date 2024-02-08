@@ -17,6 +17,8 @@
     width: 50px; /* Ou la taille que vous souhaitez */
     height: 50px; /* Ou la taille que vous souhaitez */
     border-radius: 50%; /* Pour rendre l'image ronde */
+    margin-left: 80%;
+    margin-top: -2.5%;
   }
   
   .project-description {
@@ -28,6 +30,11 @@
 
   .detail-title {
     margin-right: 20%; 
+    
+  }
+
+  .t1 {
+    margin-left: 5%;
   }
 
  

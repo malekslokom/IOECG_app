@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import ListAnalyses from '../../components/ListAnalyses/ListAnalyses';
 import './AnalysePage.css'
 import CreateAnalyseModal from '../../components/Modals/CreateAnalyseModal';
+import ListAnalyses from '../../components/ListAnalyses/ListAnalyses';
 
 
 

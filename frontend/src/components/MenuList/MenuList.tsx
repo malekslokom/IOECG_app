@@ -14,7 +14,7 @@ interface Props {
 const MenuList = ({ theme }: Props) => {
   const menuItems = [
     {
-      label: "Projets",
+      label: <Link to="/list-projets">Projets</Link>,
       key: "project",
       icon: <ProjectOutlined />,
       children: [

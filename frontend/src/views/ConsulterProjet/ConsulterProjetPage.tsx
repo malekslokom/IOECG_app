@@ -30,7 +30,7 @@ const ConsulterProjetPage = () => {
     <div className="Bloc1">
         <div>
         <div>
-          <FontAwesomeIcon icon={faArrowLeft}  className="fleche"/>
+          <button><FontAwesomeIcon icon={faArrowLeft}  className="fleche"/></button>
         </div>
         <InfosProjet project={projectData} />
         <div className="analyses">
