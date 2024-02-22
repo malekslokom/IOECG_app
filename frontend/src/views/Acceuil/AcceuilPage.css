@@ -1,36 +1,26 @@
 .Acceuil {
-    position: absolute;
-    left: 11.3%;
-    top: 10.3%;
-    right: 20%;
-    width: 88%;
-    height: 97%;
-    background-color: white;
-    
-  }
-
-  .Acceuil1{
-    height:100vh;
+    margin-top: 35px;
+    width: 97%;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     display:flex;
     flex-direction: column;
-    gap:15px;
-    font-size: 1rem;
-  
+
+  }
+  .welcome-section h1,h4{
+    color: var(--primary-text-color);
   }
   
-  .cadre {
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    
-  }
-  
-  .welcome-section {
+  .welcome-section h4 {
     margin-bottom: 2rem; /* Ajoutez un espace entre la section de bienvenue et les stats */
     margin-left: 5%;
     margin-top: 3%;
   }
-
+  .no-project-section h4 {
+    align-self: center;
+  }
   .stats-section {
     display: flex;
     justify-content: center; /* Centre les éléments de stats horizontalement */
@@ -43,25 +33,28 @@
   }
   
   .no-project-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre les éléments de stats horizontalement */
     margin-top: 2rem; /* Ajoute un espace entre les stats et la section no-project */
   }
-  
-  .create-project-button {
-    position: absolute;
-    margin-left: 45%;
-    margin-bottom: 2%;
-    padding: 10px 20px;
-    background-color: red; 
-    border: none;
+  .no-project-section button {
+    background-color: var( --toggle-fg-before-hover);     border: none;
     border-radius: 5px;
-    color: white;
+    padding:10px 20px;
+    margin-top: 10px;
+
+    color: var(--secondary-text-color);
     cursor: pointer;
     font-size: 1em;
-    
+    align-self: center;
+
+    width: 200px;
   }
+
   
-  .create-project-button:hover {
-    background-color: #e64a19; 
+  .no-project-section button:hover {
+    background-color: var( --toggle-fg-after-hover); 
   }
 
   .hr{
@@ -70,9 +63,8 @@
     margin-right: 0.6%;
     margin-top: 20%;
   }
-
-  .noProject{
-    width: 290px;
-    height: 200px;
-    margin-left: 40%;
+  .no-project-section img {
+    width: 575px;
+    height: 365px;
+    align-self: center;
   }

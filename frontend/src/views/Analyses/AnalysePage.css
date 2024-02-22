@@ -26,7 +26,7 @@ h2 {
   padding: 8px 16px;
   margin-top: 10px;
   font-size: 16px;
-  background-color: #E30613;
+  background-color: var(  --toggle-fg-before-hover);
   color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -34,7 +34,7 @@ h2 {
 }
 
 .add-button:hover {
-  background-color: #cc0000;
+  background-color: var(--toggle-fg-after-hover);
 }
 
 hr {

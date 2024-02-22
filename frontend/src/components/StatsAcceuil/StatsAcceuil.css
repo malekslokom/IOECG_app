@@ -1,7 +1,7 @@
 .statsAcceuil {
     display: flex;
     align-items: center;
-    background: #FFFFFF; /* Couleur de fond de l'élément */
+    background: var(--primary-bg); /* Couleur de fond de l'élément */
     padding: 16px;
     border-radius: 8px; /* Rayon de la bordure pour les coins arrondis */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre portée légère */
@@ -23,13 +23,13 @@
   }
   
   .statsAcceuil-title {
-    font-size: 1em; /* Taille de la police pour le titre */
-    color: #333; /* Couleur de la police pour le titre */
-    margin: 0 0 4px 0; /* Marge autour du titre */
+    font-size: 1em;
+    color: var(--primary-text-color);
+    margin: 0 0 4px 0; 
   }
   
   .statsAcceuil-count {
-    font-size: 0.85em; /* Taille de la police pour le compteur */
-    color: #666; /* Couleur de la police pour le compteur */
+    font-size: 0.85em; 
+    color: var(--primary-text-color); 
   }
   
