@@ -1,6 +1,5 @@
 import React from 'react'
 import './AnalysesExperiencesProjet.css'
-import { Table } from 'antd';
 
 interface AnalysisListProps {
     title: string;
@@ -13,29 +12,33 @@ interface AnalysisListProps {
   }
 
 const AnalysesExperiencesProjet = ({ title, data }: AnalysisListProps) => {
-    const columns = [
-        {
-          title: 'Nom',
-          dataIndex: 'name',
-          key: 'name',
-        },
-        {
-          title: 'Date création',
-          dataIndex: 'dateCreation',
-          key: 'dateCreation',
-        },
-        {
-          title: 'Auteur',
-          dataIndex: 'author',
-          key: 'author',
-        },
-      ];
-
+   
   return (
-    <div className='analyses'>
-      <h4>{title}</h4>
-      <Table dataSource={data} columns={columns} pagination={false} />
-    </div>
+    
+
+<div className='analyses'>
+  <h4>{title}</h4>
+  <div className="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Date création</th>
+        <th>Auteur</th>
+      </tr>
+    </thead>
+    <tbody>
+      {data.map((item) => (
+        <tr key={item.key}>
+          <td>{item.name}</td>
+          <td>{item.dateCreation}</td>
+          <td>{item.author}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  </div>
+</div>
   )
 }
 

@@ -1,14 +1,7 @@
-
-
- 
-
-
 img{
     width: 23px; 
     height: 23px;
 }
-
-
 
   /* Style pour l'icône de suppression lors du survol */
 .icon-trash:hover {
@@ -39,67 +32,49 @@ img{
 
   
 .container-fluid{
-  width: 100%;
+  width: 70%;
   padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem);
+  
  
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px; /* Correspond à 'row' */
-    
-  }
-  
-  .col-6 {
-    position: relative;
-    width: 50%;
-    padding-right: 15px;
-    padding-left: 15px; /* Correspond à 'col-6' */
+  .container-fluid h2{
+   margin-top: 120px;
+    margin-left: 220px;
   }
   
   .col-12 {
     position: absolute;
-    left: 0%;
-    width: 93%;
+    left: 12%;
+    width: 80%;
     padding-right: 15px;
     padding-left: 15px; /* Correspond à 'col-12' */
     
   }
-  
-  .text-right {
-    text-align: right; /* Correspond à 'text-right' */
-  }
-  
-  .mb-2 {
-    margin-bottom: 0.5rem; /* Correspond à 'mb-2' */
-  }
-  
-  .btn {
-    position: relative;
-    left: 98%;
-    top:  3%;
+
+  .container-fluid p button{
+    margin-top: 0%;
+    margin-left: 135%;
     font-weight: 400;
-    white-space: nowrap;
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.5rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
-  
-  .btn-gray {
-    color: black;
-    background-color: #aaaaaa30; /* Personnalisez selon les besoins */
     
-  }
-  
+    border: 1px solid transparent;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+
+    font-size: 16px;
+    background-color: var(  --toggle-fg-before-hover);
+    color: #ffffff;
+    }
+
+    .container-fluid p button:active{
+      transform: scale(0.8);
+    }
+
   .table {
-    width: 100%;
+    width: 80%;
     margin-bottom: 1rem;
+ 
     color: #212529;
     border-collapse: collapse;
   }
@@ -112,23 +87,51 @@ img{
     text-align: center;
   }
 
- /* Ajoute un espace entre les Menu.Item */
-.item {
-    margin-right: 56%; /* Ajustez cette valeur selon l'espace que vous souhaitez */
+  .custom-menu {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px; /* Espace entre les éléments */
   }
   
-  /* Supprime la marge pour le dernier Menu.Item */
-  .ant-menu-item:last-child {
-    margin-right: 0;
+  .menu-item {
+    font-size: 1em; /* Taille de la police ajustée */
   }
   
-  .filters .item {
-    margin-right: 16px; /* ou l'espacement que vous préférez */
+  .date-picker,
+  .select-picker,
+  .search-box {
+    font-size: 1em; /* Taille de la police pour les inputs et selects */
+    padding: 5px;
+    margin: 0;
   }
   
-  .filters {
-    margin-right: 16px; /* ou l'espacement que vous préférez */
-    margin-top: -6%;
+  .search-box {
+    flex-grow: 1;
   }
+  
+  .search-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .custom-menu .menu-item {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  
+  /* ajouter de la marge à gauche du premier élément du menu*/
+  .custom-menu .menu-item:first-child {
+    margin-left: 30px;
+  }
+
+  .col-12 hr{
+    margin-left: 25px;
+    width: 104%;
+  }
+  
  
+  
+  
  

@@ -15,7 +15,7 @@ const projectData = {
 
   let analysesData: { key: number; name: string; dateCreation: string; author: string; }[] = [];
 
-  for (let i = 1; i<5; i++){
+  for (let i = 1; i<8; i++){
 
 analysesData.push({key: i,
 name: 'Analyse_1',
@@ -27,23 +27,19 @@ const ConsulterProjetPage = () => {
   return (
     
     <div className="Bloc">
-    <div className="Bloc1">
-        <div>
-        <div>
+      <div>
           <button><FontAwesomeIcon icon={faArrowLeft}  className="fleche"/></button>
-        </div>
+      </div>
+      <div className="InfosProjet">
         <InfosProjet project={projectData} />
-        <div className="analyses">
+      </div>
+      <div className="analyses">
         <AnalysesExperiencesProjet title="Analyses Récentes" data={analysesData} />    
-        </div>
-
-        <div className="experiences">
+      </div>
+      <div className="experiences">
         <AnalysesExperiencesProjet title="Expériences Récentes" data={analysesData} />    
-        </div>
-            
-        </div>
+      </div>
    </div>
-  </div>
   )
 }
 

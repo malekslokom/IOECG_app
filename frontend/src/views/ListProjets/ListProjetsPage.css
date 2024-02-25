@@ -1,15 +1,14 @@
-.Bloc {
-    position: absolute;
-    left: 11.3%;
-    top: 9%;
-    right: 0%;
-    width: 88%;
-    height: 100%; 
-    background-color: white;
-    
-  }
-  
-  .Bloc1 {
-    margin-bottom: 15%; 
-    margin-top: 0%;
+
+
+  .Bloc {
+    margin-top: 30px;
+    margin-left: 8px;
+    width: 97%;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    display:flex;
+    flex-direction: column;
+
   }

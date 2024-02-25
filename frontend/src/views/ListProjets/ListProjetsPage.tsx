@@ -25,13 +25,11 @@ projects.push(acc);
 
   return (
     <div className="Bloc">
-        <div className="Bloc1">
             <div >
                 <ListProjets projects={projects}  />
                 
                 
             </div>
-       </div>
       </div>
   )
 }
