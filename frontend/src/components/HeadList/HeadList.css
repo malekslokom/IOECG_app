@@ -1,0 +1,31 @@
+.filters {
+    display: flex;
+    align-items: center;
+  }
+  
+.sync{
+    position: relative;
+    left: 0%;
+    
+}
+.filtreHead{
+    position: relative;
+    right:23%;
+ 
+}
+.Date{
+    display: flex;
+    position: relative;
+    left: 10%;
+}
+.Search{
+    position: relative;
+    left:  45%;
+}
+  .search-bar {
+    
+    border: 1px solid #ccc; 
+    background-color: #f0f0f0; 
+    border-radius: 25px;
+  }
+  

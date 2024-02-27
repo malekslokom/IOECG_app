@@ -1,28 +1,20 @@
 import React, { useState } from "react";
 import { Menu } from "antd";
 import "./DatasetVue.css";
-import {
-  ReloadOutlined,
-  CalendarOutlined,
-  RedoOutlined,
-    DatabaseOutlined,
-    SearchOutlined,
-    FilterOutlined,
-    EyeOutlined,
-    DeleteOutlined,
-  } from "@ant-design/icons";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import HeadList from "../../HeadList/HeadList";
   
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEye, faSync } from '@fortawesome/free-solid-svg-icons';
-import { Button, DatePicker, Input, Select, Pagination } from "antd";
 import ImportDataset from "../importDataset/ImportDataset";
 
 interface DatasetVueProps {
- 
   onOpen: () => void; 
+  nomButton: string;
+  Type: string;
 }
 
-const DatasetVue: React.FC<DatasetVueProps> = ({ onOpen }) => {
+const DatasetVue: React.FC<DatasetVueProps> = ({ onOpen, nomButton, Type }) => {
  
   // Donnée statique
   const [datasets, setDatasets] = useState([
@@ -37,17 +29,18 @@ const [isImportModalVisible, setIsImportModalVisible] = useState(false);
   const tete = (
     <thead>
       <tr>
-        <th>Date Création</th>
-        <th>Nom</th>
-        <th>Auteur</th>
-        <th>Description</th>
-        <th>Dimension</th>
-        <th></th>
-        <th></th>
+        <th scope="col text-left">Date Création</th>
+        <th scope="col text-left">Nom</th>
+        <th scope="col text-left">Auteur</th>
+        <th scope="col text-left"> Description</th>
+        {Type === "Datasets" && (<th scope="col text-left">Dimension</th> )}
+        <th scope="col text-left"></th>
+        <th scope="col text-left"></th>
       </tr>
     </thead>
   );
-
+ var nomBoutton= nomButton
+ var type =Type
   function handleDelete(index: number) {
     const newDatasets = [...datasets];
     newDatasets.splice(index, 1);
@@ -63,89 +56,50 @@ const [isImportModalVisible, setIsImportModalVisible] = useState(false);
     setIsImportModalVisible(true);
   };
   const closeModal = () => {
-    setIsImportModalVisible(false); // Fermer le modal d'importation
+    setIsImportModalVisible(false); 
   };
-  return (
+   return (
+
     <div className="page">
-       
+      <h2>{type}</h2> 
       <div className="container-fluid">
-        
           <div className="col-6">
-            <h2>Datasets</h2>
-           {/* <p>{nomProjet}</p>{/*arendre dynamique */}
-            <button className="importButton" onClick={onOpen}>
-        Importer
-      </button>
-      {/*component filtre et regler le pb des lignes */}
-          </div>
-          <div className="filters">
-              <Menu mode="horizontal" theme="light" >
-                <Menu.Item key="refresh"  style={{marginTop: '-14px'}} >
-                  <FontAwesomeIcon icon={faSync} style={{ fontSize: '1.5em', color:'rgba(59,153,255,255)'  }} />
 
-                </Menu.Item>
+      {nomBoutton !== null && (
+       <button className="importButton" onClick={onOpen}>
+       {nomBoutton}
+    </button>
+      )}
 
-                <Menu.Item key="calendar1" /*icon={<CalendarOutlined />}*/  style={{ width: 200, fontSize: '2em',marginTop: '-18px'  }}>
-                  <DatePicker /*onChange={handleDateChange}*/ />
-                </Menu.Item>
-
-                <Menu.Item key="calendar2" /*icon={<CalendarOutlined />}*/ style={{ width: 200, fontSize: '2em' ,marginTop: '-18px' }}>
-                  <DatePicker /*onChange={handleDateChange}*/ />
-                </Menu.Item>
-
-                <Menu.Item key="type" style={{marginTop: '-14px'}}>
-                <Select defaultValue="Type" style={{ width: 180, fontSize: '3em' }} /*onChange={handleTypeChange}*/>
-                  <option value="type1">Type 1</option>
-                  <option value="type2">Type 2</option>
-                </Select>
-              </Menu.Item>
-
-              <Menu.Item key="version" style={{marginTop: '-14px'}}>
-                <Select defaultValue="Version" style={{ width: 180, fontSize: '2em' }} /*onChange={handleVersionChange}*/>
-                  <option value="v1">v1</option>
-                  <option value="v2">v2</option>
-                </Select>
-              </Menu.Item>
-
-                <Menu.Item key="filter" style={{ width: 150, fontSize: '2em' ,marginTop: '-20px',marginLeft: '20px'}}>
-                <Button icon={<FilterOutlined />} /*onClick={handleFilterClick}*/>
-                  Filtre
-                </Button>
-                </Menu.Item>
-
-                <Menu.Item key="search" style={{ width: 250, fontSize: '2em',marginTop: '-20px' }}>
-                <Input
-                    placeholder="chercher ...."
-                    prefix={<SearchOutlined />}
-                    className="search-bar"
-                  
-                    /*onPressEnter={e => handleSearch(e.target.value)}*/
-                  />
-                 
-                </Menu.Item>
-                <br/>
-              </Menu>
-                
-              </div>
-          <hr/>
-      
+          </div>  
       </div>
     <br/>
-      <table className="table">
+    <hr/>
+    <br/><br/>
+    
+    <div className="filters head-list"> 
+       <HeadList></HeadList>
+    </div>
+    <br/> <br/>
+
+      <table className="table ">
         {tete}
         <tbody>
           {datasets.map((data, index) => (
             <tr key={index}>
-              <td>{data.date}</td>
-              <td>{data.nom}</td>
-              <td>{data.auteur}</td>
-              <td>{data.description}</td>
-              <td>{data.dimension}</td>
+              <td className="text-left">{data.date}</td>
+              <td className="text-left">{data.nom}</td>
+              <td className="text-left">{data.auteur}</td>
+              <td className="text-left">{data.description}</td>
+              {Type === "Datasets" && ( <td className="text-left">{data.dimension}</td> )}
               <td>
-              <DeleteOutlined onClick={() =>  handleDelete(index)} style={{ fontSize: '25px' }} />
+              <FontAwesomeIcon icon={faTrash}  onClick={() => handleDelete(index)}style={{ fontSize: '20px' }} />
+       
               </td>
               <td>
-              <EyeOutlined onClick={() => handleVue} style={{ fontSize: '25px' }} />
+                
+              <FontAwesomeIcon icon={faEye}onClick={() => handleDelete(index)}style={{ fontSize: '20px' }} />
+       
               </td>
 
             </tr>

@@ -12,30 +12,26 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
-
+/* bouton ok*/
 .okButton {
-  background-color: rgb(193, 16, 16);
+  background-color: rgb(227,6,19);
   color: white;
-  padding: 5px 30px;
+  padding: 4px 30px;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
   position: relative;
-  right: 10%; 
-  bottom: 0%;
+  right: 5%; 
+  bottom: 10px;
+
+}
+.ok-button-container {
+  margin-top: 20px;
+  text-align: right;
+  
 }
 
-.tab {
-  position: relative;
-  width: 95%;
-  left:0%;
-  top: 20%;
-  margin-bottom: 1rem;
-  color: #212529;
-  border-collapse: collapse;
-  border-right: 2px solid #dee2de ;
-  table-layout: auto;
-}
+/* Table*/
 
 .tab th,
 .tab td {
@@ -46,14 +42,24 @@
   width: auto;  
 }
 .tab-container {
+ 
   max-height: 500px;
+  max-width: 1000px;
   overflow-y: auto;
+
+}
+.tab-container table {
+  padding-right: 20px; 
+  width: calc(100% - 20px);
 }
 
-.ok-button-container {
-  margin-top: 20px;
-  text-align: right;
+.tab-container table thead th {
+  position: sticky;
+  top: 0; 
+  z-index: 1; 
+  background-color: #fff; 
 }
+
 /* Style */
 .Police {
   font-size: 15px; 
@@ -69,38 +75,46 @@
   left: 5px;
 }
 /* Barre de recherche  */
-.custom-search {
-  background-color: #f2f2f2;
-  width: 100%;
-  height: 70%;
-  position: absolute; 
-  top: 70%;
-  left: 50%;
-  right: 0%;
-  border-radius: 25px;
-  margin-left: 50px;
-}
+
 /* filtre */
 .custom-filter {
-  position: absolute ; 
-  height: 70%;
-  top: 70%; 
-  left: 175%; 
-  margin-left: 0;
-}
-/* Les paramètres pour la forme des lignes */
-.tab-striped tbody tr:nth-child(odd) {
-  background-color: rgba(0, 0, 0, 0.05);
+  position: relative ; 
+  height: 15%;
+  top: 10%; 
+  left: 28%; 
+
 }
 
-.tab-hover tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.326);
+
+/* barre de recherche*/
+.search-container {
+  position: relative;
+
 }
+.search-input {
+  position: relative;
+  padding-left: 30px; 
+  height: 35px;
+  width: 160%;
+  border: 1px solid #ccc; 
+  background-color: #f0f0f0; 
+  border-radius: 50px;
+  left: 30%; 
+
+}
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 70px; 
+  transform: translateY(-50%);
+  color: #888; 
+}
+
+
 /* Style pour la slide bar */
 .tab-container::-webkit-scrollbar {
   width: 25px; 
 }
-
 .tab-container::-webkit-scrollbar-track {
   background: #f2f2f2; 
   border-radius: 10px;
@@ -110,5 +124,5 @@
   border-radius: 10px;
   right: 2px; 
 }
-/*parrametre pour le modal */
+
 

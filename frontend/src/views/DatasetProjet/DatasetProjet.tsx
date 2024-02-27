@@ -6,8 +6,10 @@ import "./DatasetProjet.css";
 const DatasetProjet: React.FC = () => {
   const [isImportModalVisible, setIsImportModalVisible] = useState(false);
 
-  const handleImportClick = () => {
-    setIsImportModalVisible(true);
+  const handleImportClick = (nomButton: string) => {
+    if (nomButton === "Importer") {
+      setIsImportModalVisible(true);
+    }
   };
 
   const closeModal = () => {
@@ -17,7 +19,7 @@ const DatasetProjet: React.FC = () => {
   return (
     <div >
       <div >
-        <DatasetVue onOpen={handleImportClick} />
+      <DatasetVue onOpen={() => handleImportClick("Importer")} nomButton="Ajouter" Type="Projet"  />
       </div>
       
       {isImportModalVisible && <ImportDataset onClose={closeModal} />}
