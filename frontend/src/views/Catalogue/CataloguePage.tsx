@@ -27,14 +27,19 @@ const CataloguesPage: React.FC = () => {
     <div className='catalog-page'>
         <div className="content-head">
             <h2>Catalogue des modéles</h2>
-           
         </div>
         <hr />
         <div className="model-list-container">
+          <div className="row row-cols-1 row-cols-md-3">
           {models.map(model => (
-            <ModelCard key={model.name} model={model} onClick={() => handleCardClick(model)} />
+            <div key={model.name} className="col mb-4">
+              <ModelCard model={model} onClick={() => handleCardClick(model)} />
+            </div>
           ))}
         </div>
+        </div>
+
+        
 
         {selectedModel && <ModelModal model={selectedModel} onClose={closeModal} />}
     </div>
