@@ -1,0 +1,50 @@
+
+:root {
+    --primary-bg: #F3F6F9;
+    --secondary-bg: #fff;
+    --primary-text-color: #555;
+    --secondary-text-color: #fff;
+    --border-radius: 8px;
+    --speed: 500ms;
+    --background-color: #ffff;
+    --foreground-color: #003cff;
+    --toggle-bg: #f0eb9d;
+    --toggle-fg:#ffd000;
+    --hover-color: #fff;;
+    --toggle-fg-before-hover:#E30613;
+    --toggle-fg-after-hover:#cc0000;
+    --border-radius: 0.25rem;
+
+  }
+
+  .model-list-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows the cards to wrap to the next line if they don't fit */
+    justify-content: space-between; /* Distributes the cards evenly along the main axis */
+  }
+
+  h2 {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: #1C212D;
+    font-weight: 500; 
+    font-size: 22px;
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+  }
+  [data-theme="dark"] {
+    --primary-bg:#283452;
+    --background-color: #001529;
+    --secondary-bg: #001529;
+    --foreground-color: #567aff;
+    --primary-text-color: #f6f6f6;
+    --secondary-text-color: #f6f6f6;
+    --toggle-bg: #283452;
+    --toggle-fg:#00a6ff;
+    --toggle-fg-before-hover:#1677ff;
+    --toggle-fg-after-hover:#1677ff;
+
+    --hover-color: #f6f6f6;
+  }
