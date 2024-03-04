@@ -1,10 +1,14 @@
 import HeaderList from "../HeaderList/HeaderList";
-interface ParametersProps {
+interface ListPageProps {
     title: string;
     bouton: string
+    onClick:() => void;
 }
 
-const ListPage: React.FC<ParametersProps> = ({title, bouton}) => {
+
+
+const ListPage: React.FC<ListPageProps> = ({title, bouton, onClick}) => {
+
 
     return (
 
@@ -16,7 +20,7 @@ const ListPage: React.FC<ParametersProps> = ({title, bouton}) => {
               <div className="d-flex align-items-center justify-content-between">
                 <h2 > {title}</h2>
                 <div className="mb-0">
-                  <button className="btn mb-10" style={{backgroundColor:"#E30613", color:"white", height:'  37px', width: '121px'}}> {bouton}</button>
+                  <button onClick={onClick} className="btn mb-10" style={{backgroundColor:"var(--toggle-fg-before-hover)", color:"white", height:'  37px', width: '121px'}} > {bouton}</button>
                 </div>
               </div>
               <hr style={{color:"#555"}}/>
