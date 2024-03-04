@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MesDatasetPage = () => {
+const MesDatasetsPage = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const MesDatasetPage = () => {
   )
 }
 
-export default MesDatasetPage
+export default MesDatasetsPage
