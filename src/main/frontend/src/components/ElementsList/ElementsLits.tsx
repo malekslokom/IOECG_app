@@ -22,7 +22,11 @@ const ElementsList: React.FC<ListProps> = ({columns, elementsList, onShow, onDel
     const paginatedElements = elementsList.slice(startIndex, endIndex);
 
     
-      const onPageChange = (page: number) => {
+    
+    
+    
+    
+    const onPageChange = (page: number) => {
           setCurrentPage(page);
           // Afficher les élements de la page selon le numéro de la page
           const startIndex = (page - 1) * elementsPerPage;

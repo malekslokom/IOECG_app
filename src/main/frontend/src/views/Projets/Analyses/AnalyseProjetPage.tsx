@@ -3,12 +3,7 @@ import ListPage from '../../../components/ListPage/ListPage'
 import ElementsList from '../../../components/ElementsList/ElementsLits';
 import CreateAnalyseModal from '../../../components/Modals/CreateAnalyseModal';
 
-interface Analyse {
-  dateCreation: string ;
-  nom: string;
-  auteur: string;
-  description: string;
-}
+
 
 const AnalyseProjetPage = () => {
 
@@ -21,6 +16,8 @@ const AnalyseProjetPage = () => {
   const [colonnes, setColumns] = useState(["dateCreation", "nom", "auteur", "description"]);
 
   const [newAnalyseModal, setNewAnalyseModal] = useState<boolean>(false);
+
+  const [AnalyseOpen, setAnaliseOpen] = useState<boolean>(false);
 
 
   /*Actions relatif au modal de création */
@@ -44,6 +41,8 @@ const AnalyseProjetPage = () => {
 };
 
 const handleDeleteAnalyse = (index: number) => {
+  const updatedList = listAnalyses.filter((_, i) => i !== index);
+  setListAnalyses(updatedList);
   console.log('Analyse supprimée');
 };
 
