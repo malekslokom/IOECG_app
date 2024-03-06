@@ -52,16 +52,16 @@ const ElementsList: React.FC<ListProps> = ({columns, elementsList, onShow, onDel
           </tr>
         </thead>
         <tbody>
-          {paginatedElements.map((item) => (
-            <tr key={item.id}>
-              {Object.keys(item).map((key, index) => (
-                <td key={index}>{item[key]}</td>
+          {paginatedElements.map((item, index) => (
+            <tr key={index}>
+              {Object.keys(item).map((key, columnIndex) => (
+                <td key={columnIndex}>{item[key]}</td>
               ))}
               <td>
-                <FontAwesomeIcon icon={faEye} onClick={() => onShow(item.id)} style={{ cursor: 'pointer' }}/>
+                <FontAwesomeIcon icon={faEye} onClick={() => onShow(index)} style={{ cursor: 'pointer' }}/>
               </td>
               <td>
-                <FontAwesomeIcon icon={faTrash} onClick={() => onDelete(item.id)} style={{ cursor: 'pointer' }}  />
+                <FontAwesomeIcon icon={faTrash} onClick={() => onDelete(index)} style={{ cursor: 'pointer' }}  />
               </td>
             </tr>
           ))}

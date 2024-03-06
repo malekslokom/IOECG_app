@@ -14,6 +14,7 @@ import HistoriquePage from "./views/Historique/HistoriquePage";
 import NavBar from "./components/NavBar/NavBar";
 import SideBar from "./components/SideBar/SideBar";
 import MesDatasetPage from "./views/Datasets/MesDatasetPage";
+import ConsulterAnalyse from "./views/Projets/Analyses/ConsulterAnalyse";
 
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -52,6 +53,7 @@ function App() {
 
             <Route path="/historique" element={<HistoriquePage />} />
             {/* Autres routes */}
+            <Route path="projets/analyses/:id" element={<ConsulterAnalyse />} />
           </Routes>
         </div>
       </BrowserRouter>

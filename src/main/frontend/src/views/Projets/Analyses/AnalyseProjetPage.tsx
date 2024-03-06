@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import ListPage from '../../../components/ListPage/ListPage'
 import ElementsList from '../../../components/ElementsList/ElementsLits';
 import CreateAnalyseModal from '../../../components/Modals/CreateAnalyseModal';
@@ -19,6 +20,8 @@ const AnalyseProjetPage = () => {
 
   const [AnalyseOpen, setAnaliseOpen] = useState<boolean>(false);
 
+  const navigate = useNavigate();
+
 
   /*Actions relatif au modal de création */
   const buttonClick = () => {
@@ -37,11 +40,13 @@ const AnalyseProjetPage = () => {
 
   /*Actions sur une analyse */
   const handleShowAnalyse = (index: number) => {
+    navigate(`/projets/analyses/${index}`);
     console.log('Analyse ouverte');
 };
 
 const handleDeleteAnalyse = (index: number) => {
-  const updatedList = listAnalyses.filter((_, i) => i !== index);
+  const updatedList = [...listAnalyses];
+  updatedList.splice(index, 1);
   setListAnalyses(updatedList);
   console.log('Analyse supprimée');
 };
