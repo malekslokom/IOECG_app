@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ListPage from '../../../components/ListPage/ListPage'
 import ElementsList from '../../../components/ElementsList/ElementsLits';
 import CreateAnalyseModal from '../../../components/Modals/CreateAnalyseModal';
-
+import ConfirmationArchiverModal from '../../../components/Modals/ConfirmationArchiverModal';
 
 
 const AnalyseProjetPage = () => {
@@ -18,7 +18,9 @@ const AnalyseProjetPage = () => {
 
   const [newAnalyseModal, setNewAnalyseModal] = useState<boolean>(false);
 
-  const [AnalyseOpen, setAnaliseOpen] = useState<boolean>(false);
+  const [showConfirmationModal, setShowConfirmationModal] = useState<boolean>(false);
+  const [selectedAnalyse, setSelectedAnalyse] = useState<number | null>(null);
+
 
   const navigate = useNavigate();
 
@@ -44,12 +46,28 @@ const AnalyseProjetPage = () => {
     console.log('Analyse ouverte');
 };
 
-const handleDeleteAnalyse = (index: number) => {
-  const updatedList = [...listAnalyses];
-  updatedList.splice(index, 1);
-  setListAnalyses(updatedList);
-  console.log('Analyse supprimée');
-};
+  const handleDeleteAnalyse = (index: number) => {
+    setSelectedAnalyse(index);
+    setShowConfirmationModal(true);
+    console.log('Analyse cliquée et supprimée');
+  };
+
+  const handleConfirmDelete = () => {
+    if (selectedAnalyse!== null) {
+      const updatedList = [...listAnalyses];
+      updatedList.splice(selectedAnalyse, 1);
+      setListAnalyses(updatedList);
+
+      setSelectedAnalyse(null);
+      setShowConfirmationModal(false);
+      console.log('Analyse supprimée');
+    }
+  };
+
+  const handleCloseConfirmationModal = () => {
+      setShowConfirmationModal(false);
+      setSelectedAnalyse(null);
+  };
 
   return (
     <div>
@@ -60,6 +78,8 @@ const handleDeleteAnalyse = (index: number) => {
           </div>
           </div>
         {newAnalyseModal && <CreateAnalyseModal onClose={handleCloseModal} onCreate={handleCreateAnalyse}/> }
+        <ConfirmationArchiverModal isOpen={showConfirmationModal} onClose={handleCloseConfirmationModal} onConfirm={handleConfirmDelete} />
+          
     </div>
   )
 }
