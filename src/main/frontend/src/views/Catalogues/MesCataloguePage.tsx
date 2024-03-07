@@ -14,6 +14,24 @@ const MesCataloguePage: React.FC = () => {
       .catch(error => console.error('Error fetching models:', error));
   }, []);
 
+  // useEffect(() => {
+  //   // Fetch service information from Consul when the component mounts
+  //   fetchServiceInfo();
+  // }, []);
+
+  // const fetchServiceInfo = async () => {
+  //   try {
+  //     const response = await fetch('http://127.0.0.1:8500/v1/catalog/service/models');
+  //     if (!response.ok) {
+  //       throw new Error('Failed to fetch service information from Consul');
+  //     }
+  //     const data = await response.json();
+  //     setModels(data);
+  //   } catch (error) {
+  //     console.error('Error fetching service information from Consul:', error);
+  //   }
+  // };
+
   const handleCardClick = (model: Model) => {
     setSelectedModel(model);
   };

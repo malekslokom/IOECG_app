@@ -129,7 +129,7 @@ const ModelModal: React.FC<ModelModalProps> = ({ model, onClose }) => {
                 <input type="text" className="form-control" value={model.projectName} readOnly />
               </div>
             </div>
-            <textarea className="form-control" rows={4} readOnly>{model.description}</textarea> 
+            <textarea className="form-control" rows={4} readOnly value={model.description}/> 
           </div>
         </div>
         <div className="modal-section">
@@ -145,7 +145,7 @@ const ModelModal: React.FC<ModelModalProps> = ({ model, onClose }) => {
                 <input type="text" className="form-control" value={model.architectureVersion} readOnly />
               </div>
             </div>
-            <textarea className="form-control" rows={4} readOnly>{model.architectureDescription}</textarea>
+            <textarea className="form-control" rows={4} readOnly value={model.architectureDescription}/>
           </div>
         </div>
         <div className="modal-section">
