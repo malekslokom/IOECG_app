@@ -15,7 +15,7 @@ import NavBar from "./components/NavBar/NavBar";
 import SideBar from "./components/SideBar/SideBar";
 import MesDatasetPage from "./views/Datasets/MesDatasetPage";
 import ConsulterAnalyse from "./views/Projets/Analyses/ConsulterAnalyse";
-import AcceuilPage from "./views/Acceuil/AcceuilPage";
+import AccueilPage from "./views/Accueil/AccueilPage";
 import ConsulterProjetPage from "./views/ConsulterProjet/ConsulterProjetPage";
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
         <SideBar />
         <div className="content">
           <Routes>
-            <Route path="/home" element={<AcceuilPage />} />
+            <Route path="/home" element={<AccueilPage />} />
             <Route path="/projets" element={<ListProjetsPage />} />
             <Route
               path="/projets/catalogues"
