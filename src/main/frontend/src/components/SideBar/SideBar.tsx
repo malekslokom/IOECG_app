@@ -23,7 +23,7 @@ const SideBar = () => {
             onClick={toggleProjects}
           >
             <HomeIcon />
-            <span className="sidebar-text d-none d-lg-inline">Projets</span>
+            <span className="sidebar-text d-none d-lg-inline"><Link to="/projets">Projets</Link></span>
             <ExpandMoreIcon
               className={`expand-icon ${!showProjects ? "rotate" : ""}`}
             />
