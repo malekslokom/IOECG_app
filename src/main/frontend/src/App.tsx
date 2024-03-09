@@ -17,6 +17,8 @@ import MesDatasetPage from "./views/Datasets/MesDatasetPage";
 import ConsulterAnalyse from "./views/Projets/Analyses/ConsulterAnalyse";
 import AccueilPage from "./views/Accueil/AccueilPage";
 import ConsulterProjetPage from "./views/ConsulterProjet/ConsulterProjetPage";
+import ListEcgPage from "./views/Projets/Ecg/ListEcgPage";
+import ConsulterRapport from "./views/Projets/Rapports/ConsulterRapport";
 
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -57,6 +59,8 @@ function App() {
             <Route path="/historique" element={<HistoriquePage />} />
             {/* Autres routes */}
             <Route path="projets/analyses/:id" element={<ConsulterAnalyse />} />
+            <Route path="projets/datasets/:id/ecg" element={<ListEcgPage/>} />
+            <Route path='projets/rapports/:id' element={<ConsulterRapport/>}/>
           </Routes>
         </div>
       </BrowserRouter>

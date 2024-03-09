@@ -2,28 +2,18 @@ import "./ListProjetsPage.css";
 import ListPage from "../../../components/ListPage/ListPage";
 import ElementsList from "../../../components/ElementsList/ElementsLits";
 import { useState, useEffect } from "react";
-import CreateProjetModal from "../../../components/Modals/CreateProjetModal";
 import { fetchProjets } from "../../../services/ApiService";
+import CreateProjetModal from "../../../components/Modals/CreateProjetModal";
+import ConfirmationArchiverModal from "../../../components/Modals/ConfirmationArchiverModal";
 
 const ListProjetsPage = () => {
-
-  /*let projects: any[]=[];
-
- for (let i = 0; i<8; i++){
-    let acc: {[key: string]: string}={};
-acc.name="projet1";
-acc.creationDate="10/12/2023";
-acc.author="Andy";
-acc.version="v1";
-acc.type="Classification";
-
-projects.push(acc);
-  }  */
 
   const [listProjets, setListProjets] = useState<Projet[]>([]);
 
   const [columns, setColumns] = useState(["DateCreation", "Nom", "Auteur", "Version", "Type"]);
   const [newProjetModal, setNewProjetModal] = useState<boolean>(false);
+  const [showConfirmationModal, setShowConfirmationModal] = useState<boolean>(false);
+  const [selectedProjet, setSelectedProjet] = useState<number | null>(null);
 
   useEffect(() => {
     fetchProjets()
@@ -42,10 +32,6 @@ projects.push(acc);
     console.log("Analyse ouverte");
   }
 
-  function onDelete(): void {
-    console.log("onDelete");
-  }
-
   const handleCreateProjet = (newProjet: Projet) => {
     console.log('Nouveau projet créé:', newProjet);
     setListProjets([...listProjets, newProjet]);
@@ -54,24 +40,43 @@ projects.push(acc);
 const handleCloseModal = () => {
     setNewProjetModal(false);
 };
-
+/*Supprimer un projet + confirmation*/
 const handleDeleteProjet = (index: number) => {
-  const updatedList = listProjets.filter((_, i) => i !== index);
-  setListProjets(updatedList);
-  console.log('Projet supprimée');
+  setSelectedProjet(index);
+  setShowConfirmationModal(true);
+  console.log('Projet cliqué et supprimé');
 };
+
+const handleConfirmDeleteProjet = () => {
+  if (selectedProjet!== null) {
+    const updatedList = [...listProjets];
+    updatedList.splice(selectedProjet, 1);
+    setListProjets(updatedList);
+
+    setSelectedProjet(null);
+    setShowConfirmationModal(false);
+    console.log('Projet supprimé');
+  }
+};
+
+const handleCloseConfirmationModal = () => {
+  setShowConfirmationModal(false);
+  setSelectedProjet(null);
+};
+
 
   return (
     <div>
             <div className="position-relative">
                 {/*<ListProjets projects={projects}  />*/}
-                <ListPage  title="Projets"  bouton="Créer" onClick={buttonClick }/>
+                <ListPage  title="Projets"  bouton="Créer" boutonVisible={true} onClick={buttonClick }/>
                 <div className="position-absolute" style={{top:"160px", left:0, width:"100%"}}>
                   <ElementsList columns={columns} elementsList={listProjets} onDelete={handleDeleteProjet} onShow={onShow} />
                 </div>
                 
                 {newProjetModal && <CreateProjetModal onClose={handleCloseModal} onCreate={handleCreateProjet}/> }
-
+                <ConfirmationArchiverModal isOpen={showConfirmationModal} onClose={handleCloseConfirmationModal} onConfirm={handleConfirmDeleteProjet} />
+          
                 
             </div>
       </div>
