@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
-import AcceuilPage from "./views/Acceuil/AcceuilPage";
-import ProjetList from "./views/Projets/ListProjets/ProjetList";
+
+import ListProjetsPage from "./views/Projets/ListProjets/ListProjetsPage";
 import CatalogueProjetPage from "./views/Projets/Catalogues/CatalogueProjetPage";
 import DatasetProjetPage from "./views/Projets/Datasets/DatasetProjetPage";
 import AnalyseProjetPage from "./views/Projets/Analyses/AnalyseProjetPage";
@@ -15,6 +15,8 @@ import NavBar from "./components/NavBar/NavBar";
 import SideBar from "./components/SideBar/SideBar";
 import MesDatasetPage from "./views/Datasets/MesDatasetPage";
 import ConsulterAnalyse from "./views/Projets/Analyses/ConsulterAnalyse";
+import AccueilPage from "./views/Accueil/AccueilPage";
+import ConsulterProjetPage from "./views/ConsulterProjet/ConsulterProjetPage";
 
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -39,8 +41,8 @@ function App() {
         <SideBar />
         <div className="content">
           <Routes>
-            <Route path="/" element={<AcceuilPage />} />
-            <Route path="/projets" element={<ProjetList />} />
+            <Route path="/home" element={<AccueilPage />} />
+            <Route path="/projets" element={<ListProjetsPage />} />
             <Route
               path="/projets/catalogues"
               element={<CatalogueProjetPage />}
@@ -50,6 +52,7 @@ function App() {
             <Route path="/projets/rapports" element={<RapportProjetPage />} />
             <Route path="/mes-catalogues" element={<MesCataloguePage />} />
             <Route path="/mes-datasets" element={<MesDatasetPage />} />
+            <Route path="/projets/consulter-projet" element={<ConsulterProjetPage/>} /> 
 
             <Route path="/historique" element={<HistoriquePage />} />
             {/* Autres routes */}
