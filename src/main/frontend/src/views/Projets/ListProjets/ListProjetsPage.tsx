@@ -1,16 +1,15 @@
 import "./ListProjetsPage.css";
-import ListProjets from '../../../components/ListProjets/ListProjets';
 import ListPage from "../../../components/ListPage/ListPage";
 import ElementsList from "../../../components/ElementsList/ElementsLits";
-import CreateAnalyseModal from "../../../components/Modals/CreateAnalyseModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CreateProjetModal from "../../../components/Modals/CreateProjetModal";
+import { fetchProjets } from "../../../services/ApiService";
 
 const ListProjetsPage = () => {
 
-  let projects: any[]=[];
+  /*let projects: any[]=[];
 
-  for (let i = 0; i<8; i++){
+ for (let i = 0; i<8; i++){
     let acc: {[key: string]: string}={};
 acc.name="projet1";
 acc.creationDate="10/12/2023";
@@ -19,17 +18,19 @@ acc.version="v1";
 acc.type="Classification";
 
 projects.push(acc);
-  }  
+  }  */
 
-  const [listProjets, setListProjets] = useState([
-    { nom:"Projet 1",  dateCreation: "01/01/24", auteur: "Andy", version: " V1", type:"Clasification"},
-    { nom:"Projet 2",  dateCreation: "01/01/24", auteur: "Andy", version: " V1", type:"régression"},
-    { nom:"Projet 3",  dateCreation: "01/01/24", auteur: "Andy", version: " V1", type:"Visualisation"},
-    { nom:"Projet 4",  dateCreation: "01/01/24", auteur: "Andy", version: " V1", type:"Clasification"},
-  ]);
+  const [listProjets, setListProjets] = useState<Projet[]>([]);
 
-  const [columns, setColumns] = useState(["Nom", "DateCreation", "Auteur", "Version", "Type"]);
+  const [columns, setColumns] = useState(["DateCreation", "Nom", "Auteur", "Version", "Type"]);
   const [newProjetModal, setNewProjetModal] = useState<boolean>(false);
+
+  useEffect(() => {
+    fetchProjets()
+      .then(data => setListProjets(data))
+      .catch(error => console.error('Error fetching projects:', error));
+  }, []); 
+
 
   /*Actions relatif au modal de création */
   const buttonClick = () => {
@@ -66,7 +67,7 @@ const handleDeleteProjet = (index: number) => {
                 {/*<ListProjets projects={projects}  />*/}
                 <ListPage  title="Projets"  bouton="Créer" onClick={buttonClick }/>
                 <div className="position-absolute" style={{top:"160px", left:0, width:"100%"}}>
-                  <ElementsList columns={columns} elementsList={projects} onDelete={handleDeleteProjet} onShow={onShow} />
+                  <ElementsList columns={columns} elementsList={listProjets} onDelete={handleDeleteProjet} onShow={onShow} />
                 </div>
                 
                 {newProjetModal && <CreateProjetModal onClose={handleCloseModal} onCreate={handleCreateProjet}/> }
