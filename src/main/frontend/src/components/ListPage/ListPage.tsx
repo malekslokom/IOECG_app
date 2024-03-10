@@ -40,11 +40,12 @@ const ListPage: React.FC<ListPageProps> = ({
                 </div>
               )}
             </div>
-            <hr style={{ color: "var(--primary-text-color)" }} />
+            <hr style={{ color: "#555" }} />
           </div>
-
-          <HeaderList></HeaderList>
+          <hr style={{ color: "var(--primary-text-color)" }} />
         </div>
+
+        <HeaderList></HeaderList>
       </div>
     </div>
   );

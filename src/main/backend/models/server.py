@@ -71,7 +71,9 @@ class Model(db.Model):
 #     return jsonify(models)
 
 
-
+@app.route('/api/models/health')
+def health():
+    return jsonify({"status": "up"})
 # Définition de la route pour récupérer les modèles
 @app.route("/api/models", methods=["GET"])
 def get_models():

@@ -85,8 +85,8 @@ const RapportProjetPage = () => {
           style={{ top: "160px", left: 0, width: "100%" }}
         >
           <ElementsList
-            columns={columns}
             nameModule="rapport"
+            columns={columns}
             elementsList={listRapports}
             onDelete={handleDeleteRapport}
             onShow={onShow}

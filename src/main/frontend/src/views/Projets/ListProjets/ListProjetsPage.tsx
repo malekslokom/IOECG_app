@@ -95,7 +95,7 @@ const ListProjetsPage = () => {
             elementsList={listProjets}
             onDelete={handleDeleteProjet}
             onShow={onShow}
-          />{" "}
+          />
         </div>
 
         {newProjetModal && (

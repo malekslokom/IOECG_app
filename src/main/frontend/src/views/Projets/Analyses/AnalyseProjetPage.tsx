@@ -30,7 +30,7 @@ const AnalyseProjetPage = () => {
 
   const navigate = useNavigate();
 
-  /*Actions relatif au modal de création */
+  /*Actions relatif au modal de création: ouverture et fermeture du modal */
   const buttonClick = () => {
     setNewAnalyseModal(true);
     console.log("Bouton Ajouter cliqué !");
