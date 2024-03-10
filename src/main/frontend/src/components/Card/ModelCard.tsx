@@ -31,7 +31,7 @@ const ModelCard: React.FC<ModelCardProps> = ({ model, onClick }) => {
   <h5 className="card-title">{model.name}</h5>
   <h6 className="card-subtitle mb-2 text-muted">{model.author}</h6>
   <p className="card-text">{model.description}</p>
-  <span className="badge bg-secondary p-2">{model.taskNature}</span>
+  <span className="badge bg-secondary p-2">{model.task_nature}</span>
 </div>
 </div>
   );
