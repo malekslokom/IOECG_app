@@ -32,14 +32,14 @@ const HeaderModel: React.FC = () => {
                     </button>
                 </div>
                 <div className="col">
-                    <input type="text" placeholder="Search by author" className="form-control" style={{ width: "100%" }} onChange={handleAuthorSearch} />
+                    <input type="text" placeholder="Auteur" className="form-control" style={{ width: "100%" }} onChange={handleAuthorSearch} />
                 </div>
                 <div className="col">
-                    <input type="text" placeholder="Search by model name" className="form-control" style={{ width: "100%" }} onChange={handleModelNameSearch} />
+                    <input type="text" placeholder="Nom de modéle" className="form-control" style={{ width: "100%" }} onChange={handleModelNameSearch} />
                 </div>
                 <div className="col-auto">
                     <select className="form-select" onChange={handleTypeChange}>
-                        <option value="">Select Project Type</option>
+                        <option value="">Nature de modéle</option>
                         <option value="Regression">Regression</option>
                         <option value="Binary Classification">Binary Classification</option>
                         <option value="Multi-class Classification">Multi-class Classification</option>
