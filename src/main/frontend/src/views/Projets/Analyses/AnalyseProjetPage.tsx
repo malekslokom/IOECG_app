@@ -45,12 +45,13 @@ const AnalyseProjetPage = () => {
     setNewAnalyseModal(false);
   };
 
-  /*Actions sur une analyse */
+  /*Ouvrir une analyse */
   const handleShowAnalyse = (index: number) => {
     navigate(`/projets/analyses/${index}`);
     console.log("Analyse ouverte");
   };
 
+  /*Supprimer une analyse + demande de confirmation */
   const handleDeleteAnalyse = (index: number) => {
     setSelectedAnalyse(index);
     setShowConfirmationModal(true);

@@ -126,10 +126,10 @@ const ModelModal: React.FC<ModelModalProps> = ({ model, onClose }) => {
               </div>
               <div className="input-group mb-3">
                 <span className="input-group-text">Nom de projet</span>
-                <input type="text" className="form-control" value={model.projectName} readOnly />
+                <input type="text" className="form-control" value={model.project_name} readOnly />
               </div>
             </div>
-            <textarea className="form-control" rows={4} readOnly>{model.description}</textarea> 
+            <textarea className="form-control" rows={4} readOnly value={model.description}/> 
           </div>
         </div>
         <div className="modal-section">
@@ -138,14 +138,14 @@ const ModelModal: React.FC<ModelModalProps> = ({ model, onClose }) => {
             <div className="d-flex justify-content-between">
               <div className="input-group mb-3">
                 <span className="input-group-text">Nom</span>
-                <input type="text" className="form-control" value={model.architectureName} readOnly />
+                <input type="text" className="form-control" value={model.architecture_name} readOnly />
               </div>
               <div className="input-group mb-3">
                 <span className="input-group-text">Version</span>
-                <input type="text" className="form-control" value={model.architectureVersion} readOnly />
+                <input type="text" className="form-control" value={model.architecture_version} readOnly />
               </div>
             </div>
-            <textarea className="form-control" rows={4} readOnly>{model.architectureDescription}</textarea>
+            <textarea className="form-control" rows={4} readOnly value={model.architecture_description}/>
           </div>
         </div>
         <div className="modal-section">
@@ -154,32 +154,32 @@ const ModelModal: React.FC<ModelModalProps> = ({ model, onClose }) => {
             <div className="d-flex flex-wrap gap-2 justify-content-between mb-4">
               <div>
                 <h6 className="tag-title">Total des Paramètres</h6>
-                <span className="badge bg-secondary">{model.totalParams}</span>
+                <span className="badge bg-secondary">{model.total_params}</span>
               </div>
               <div>
                 <h6 className="tag-title">Taille du Modèle</h6>
-                <span className="badge bg-secondary">{model.modelSize}</span>
+                <span className="badge bg-secondary">{model.model_size}</span>
               </div>
               <div>
                 <h6 className="tag-title">Taille du Batch</h6>
-                <span className="badge bg-secondary">{model.hyperparameters.batchSize}</span>
+                <span className="badge bg-secondary">{model.batch_size}</span>
               </div>
             </div>
             <div className="d-flex flex-wrap gap-2 justify-content-between">
               <div>
                 <h6 className="tag-title">Taux d'Apprentissage</h6>
-                <span className="badge bg-secondary">{model.hyperparameters.learningRate}</span>
+                <span className="badge bg-secondary">{model.learning_rate}</span>
               </div>
               <div>
                 <h6 className="tag-title">Nature de la Tâche</h6>
-                <span className="badge bg-secondary">{model.taskNature}</span>
+                <span className="badge bg-secondary">{model.task_nature}</span>
               </div>
             </div>
           </div>
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onClose}>
+        <Button className='custom-button' onClick={onClose}>
           Fermer
         </Button>
       </Modal.Footer>
