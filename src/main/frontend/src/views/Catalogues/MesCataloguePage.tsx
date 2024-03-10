@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchModels } from '../../services/ApiService';
+import { fetchModels } from '../../services/ModelService';
 import ModelCard from '../../components/Card/ModelCard';
 import ModelModal from '../../components/Modals/ModelModal';
 import './CataloguePage.css'

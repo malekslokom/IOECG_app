@@ -29,14 +29,18 @@
   }
 }
 
+a {
+  color: var(--primary-text-color);
+  text-decoration: none;
 
+}
 
-.nav-link, .nav-link:link, .nav-link:visited, .nav-link:active, .nav-link:hover, .nav-link:focus {
+.nav-link, .nav-link:link, .nav-link:visited,  .nav-link:hover, .nav-link:focus {
   display: flex;
   align-items: center;
   width: 100%;
-  color: var(--primary-text-color);
-  text-decoration: none;
+  color: var(--primary-text-color) ;
+    text-decoration: none;
 }
 .nav-link:hover {
   background-color: var(--sidebar-item-active);

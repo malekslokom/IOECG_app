@@ -1,7 +1,7 @@
 import "./NavBar.css";
-import userExemple from "../../assets/exemple-user.png";
-import logo from "../../assets/IRD.png";
-import Toggle from "../Toggle/Toggle"; // Votre composant Toggle personnalisé
+import userExemple from "./../../assets/exemple-user.png";
+import logo from "./../../assets/IRD.png";
+import Toggle from "../Toggle/Toggle";
 import useLocalStorage from "use-local-storage";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -24,11 +24,7 @@ const NavBar = ({ theme, onThemeChange }: Props) => {
     >
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img
-            src={logo}
-            alt="Logo"
-            style={{ height: "70px", width: "auto" }}
-          />
+          <img src={logo} style={{ height: "70px", width: "auto" }} />
         </a>
         <div className="d-flex align-items-center">
           <Toggle
