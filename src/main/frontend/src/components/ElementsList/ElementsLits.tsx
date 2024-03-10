@@ -76,6 +76,17 @@ const ElementsList: React.FC<ListProps> = ({
                   </>
                 )}
 
+                  {nameModule == "rapport" && (
+                  <>
+                    <td>{item.nom}</td>
+                    <td>{item.dateCreation}</td>
+                    <td>{item.auteur}</td>
+                    <td>{item.models.join(", ")}</td>
+                    <td>{item.datasets.join(", ")}</td>
+                    <td></td>
+                  </>
+                )}
+
                 <td>
                   <FontAwesomeIcon
                     icon={faEye}

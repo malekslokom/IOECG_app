@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 const RapportProjetPage = () => {
   const navigate = useNavigate();
-  const [listRapports, setListRapports] = useState<Rapport[]>([
+
+  /*
     {
       dateCreation: "09/03/2024",
       nom: "Rapport 1",
@@ -25,7 +26,9 @@ const RapportProjetPage = () => {
       modeles: ["Modèle E ", "Modèle F "],
       datasets: ["Dataset 5 ", "Dataset 6 "],
     },
-  ]);
+  */
+
+  const [listRapports, setListRapports] = useState<Rapport[]>([]);
   const [columns, setColumns] = useState([
     "DateCreation",
     "Nom",
