@@ -27,8 +27,8 @@ interface Model {
   };
   
   interface Projet {
-    nom: string ;
     dateCreation: string;
+    nom: string ;
     auteur: string;
     version: string;    
     type: string; 
@@ -38,6 +38,25 @@ interface Model {
       nom: string ;
       dateCreation: string;
       auteur: string;
-      version: string;    
+      description: string;    
       type: string; 
     }
+
+    interface Ecg {
+      idPatient: number,
+      origine_dataset_id: number
+      filepath: string,
+      recording_started_at: string;
+      recording_ended_at: string;
+      recording_initial_sampling_rate: number;
+      recording_sampling_rate: number;
+      recording_duration: string;
+      protocol_details: string;
+    }
+
+interface Rapport {
+  dateCreation: string;
+  nom: string ;
+  modeles: string[];   //ou Model[]  ?
+  datasets: string[] // ou Dataset[] ?
+}

@@ -25,7 +25,7 @@ const AnalyseProjetPage = () => {
   const navigate = useNavigate();
 
 
-  /*Actions relatif au modal de création */
+  /*Actions relatif au modal de création: ouverture et fermeture du modal */
   const buttonClick = () => {
         setNewAnalyseModal(true);
         console.log("Bouton Ajouter cliqué !");
@@ -40,12 +40,13 @@ const AnalyseProjetPage = () => {
         setNewAnalyseModal(false);
     };
 
-  /*Actions sur une analyse */
+  /*Ouvrir une analyse */
   const handleShowAnalyse = (index: number) => {
     navigate(`/projets/analyses/${index}`);
     console.log('Analyse ouverte');
 };
 
+/*Supprimer une analyse + demande de confirmation */
   const handleDeleteAnalyse = (index: number) => {
     setSelectedAnalyse(index);
     setShowConfirmationModal(true);
@@ -72,7 +73,7 @@ const AnalyseProjetPage = () => {
   return (
     <div>
       <div className="position-relative">
-          <ListPage title='Analyses' bouton='Créer'onClick={buttonClick} />
+          <ListPage title='Analyses' bouton='Créer' boutonVisible={true} onClick={buttonClick} />
           <div className="position-absolute" style={{ top: "160px", left: 0, width: '100%' }}>
             <ElementsList columns={colonnes} elementsList={listAnalyses} onShow={handleShowAnalyse}  onDelete={handleDeleteAnalyse} />
           </div>

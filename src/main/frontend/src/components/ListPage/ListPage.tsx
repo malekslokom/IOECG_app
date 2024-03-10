@@ -2,12 +2,13 @@ import HeaderList from "../HeaderList/HeaderLits";
 interface ListPageProps {
     title: string;
     bouton: string
+    boutonVisible: boolean; 
     onClick:() => void;
 }
 
 
 
-const ListPage: React.FC<ListPageProps> = ({title, bouton, onClick}) => {
+const ListPage: React.FC<ListPageProps> = ({title, bouton, boutonVisible, onClick}) => {
 
 
     return (
@@ -19,9 +20,11 @@ const ListPage: React.FC<ListPageProps> = ({title, bouton, onClick}) => {
             <div className="header">
               <div className="d-flex align-items-center justify-content-between">
                 <h2 > {title}</h2>
+                {boutonVisible && (
                 <div className="mb-0">
                   <button onClick={onClick} className="btn mb-10" style={{backgroundColor:"var(--toggle-fg-before-hover)", color:"white", height:'  37px', width: '121px'}} > {bouton}</button>
                 </div>
+                )}
               </div>
               <hr style={{color:"#555"}}/>
             </div>
