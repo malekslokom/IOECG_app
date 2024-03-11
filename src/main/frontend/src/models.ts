@@ -30,8 +30,8 @@ interface Model {
     dateCreation: string;
     nom: string ;
     auteur: string;
-    version: string;    
     type: string; 
+    version:string;
   }
 
   interface ECG {

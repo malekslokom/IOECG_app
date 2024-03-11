@@ -1,10 +1,9 @@
-
 import "./AccueilPage.css";
-import analyse from "../../assets/Accueil/analysing.png";
-import projets from "../../assets/Accueil/project-plan.png";
-import datasets from "../../assets/Accueil/data-transfer.png";
-import rapports from "../../assets/Accueil/repports.png";
-import noProject from "../../assets/Accueil/no-project.png";
+import analyse from "../../../../resources/static/assets/Acceuil/analysing.png";
+import projets from "../../../../resources/static/assets/Acceuil/project-plan.png";
+import datasets from "../../../../resources/static/assets/Acceuil/data-transfer.png";
+import rapports from "../../../../resources/static/assets/Acceuil/repports.png";
+import noProject from "../../../../resources/static/assets/Acceuil/no-project.png";
 import StatsAccueil from "../../components/StatsAccueil/StatsAccueil";
 
 const AccueilPage = () => {
@@ -23,7 +22,7 @@ const AccueilPage = () => {
       </div>
       <div className="no-project-section">
         <img src={noProject} alt="No Project Found" />
-        <h4 >
+        <h4>
           Nous supposons que c'est votre première fois ! <br />
           Créez un projet maintenant pour commencer !
         </h4>

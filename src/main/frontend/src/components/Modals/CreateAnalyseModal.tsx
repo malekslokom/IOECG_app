@@ -1,20 +1,25 @@
-import React, { useState } from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
+import React, { useState } from "react";
+import { Modal, Button, Form } from "react-bootstrap";
 
 interface CreateAnalyseModalProps {
   onClose: () => void;
   onCreate: (newAnalyse: Analyse) => void;
 }
 
-const CreateAnalyseModal: React.FC<CreateAnalyseModalProps> = ({ onClose, onCreate }) => {
-  const [name, setName] = useState<string>('');
-  const [description, setDescription] = useState<string>('');
+const CreateAnalyseModal: React.FC<CreateAnalyseModalProps> = ({
+  onClose,
+  onCreate,
+}) => {
+  const [name, setName] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
   };
 
-  const handleDescriptionChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleDescriptionChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     setDescription(event.target.value);
   };
 
@@ -22,16 +27,16 @@ const CreateAnalyseModal: React.FC<CreateAnalyseModalProps> = ({ onClose, onCrea
     event.preventDefault();
 
     const newAnalyse: Analyse = {
-      dateCreation: new Date().toLocaleDateString('fr-FR'),
       nom: name,
-      auteur: 'Andy', // Vous pouvez remplacer par le nom de l'utilisateur actuel
-      description: description      
+      dateCreation: new Date().toLocaleDateString("fr-FR"),
+      auteur: "Andy", // Vous pouvez remplacer par le nom de l'utilisateur actuel
+      description: description,
     };
 
     onCreate(newAnalyse);
 
-    setName('');
-    setDescription('');
+    setName("");
+    setDescription("");
     onClose();
   };
 
@@ -57,11 +62,20 @@ const CreateAnalyseModal: React.FC<CreateAnalyseModalProps> = ({ onClose, onCrea
               as="textarea"
               value={description}
               onChange={handleDescriptionChange}
-              style={{ height: '261px' }}
+              style={{ height: "261px" }}
             />
           </Form.Group>
-          <div style={{ textAlign: 'center', marginTop: '20px' }}>
-          <Button variant="primary" type="submit" style={{backgroundColor: "var(--toggle-fg-before-hover)", width:'281px' }}>Créer</Button>
+          <div style={{ textAlign: "center", marginTop: "20px" }}>
+            <Button
+              variant="primary"
+              type="submit"
+              style={{
+                backgroundColor: "var(--toggle-fg-before-hover)",
+                width: "281px",
+              }}
+            >
+              Créer
+            </Button>
           </div>
         </Form>
       </Modal.Body>
