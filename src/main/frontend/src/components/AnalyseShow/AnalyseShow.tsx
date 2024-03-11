@@ -1,10 +1,40 @@
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
+import AnalyseDatsetModal from '../../components/Modals/Analyse/AnalyseDatsetModal';
 
 
 
 const AnalyseShow = () => {
+  const [showModalDataset, setShowModalDataset] = useState(false);
+  const [selectedDatasets, setSelectedDatasets] = useState<Dataset[]>([]);
+  const [availableDatasets, setAvailableDatasets] = useState<Dataset[]>([]);
 
+  // const datasets: any[] = [
+  //   // { id: 1, name: 'Dataset 1', description: 'Description of Dataset 1', type: 'Type 1' },
+  //   // { id: 2, name: 'Dataset 2', description: 'Description of Dataset 2', type: 'Type 2' },
+  //   // { id: 3, name: 'Dataset 3', description: 'Description of Dataset 3', type: 'Type 3' },
+  //   // Add more datasets as needed
+  // ];
+
+  const [datasets, setDatasets] = useState<Dataset[]>(selectedDatasets);
+
+  const handleOpenModalDataset = () => {
+    setShowModalDataset(true);
+  }
+  const closeModal = () => {
+    setShowModalDataset(false);
+  };
+
+  // Function to add new datasets
+  const handleCreateDataset = (newDatasets: Dataset[]) => {
+    // Add the newly created datasets to the list of selected datasets for the analysis
+    setSelectedDatasets(prevDatasets => [...prevDatasets, ...newDatasets]);
+    // Update the datasets array with the new datasets
+    setDatasets(prevDatasets => [...prevDatasets, ...newDatasets]);
+  };
+
+  
     return (    
     	 <div className="my-5">
       <div className="container-fluid rounded border p-3" style={{backgroundColor:'white'}}>
@@ -27,11 +57,18 @@ const AnalyseShow = () => {
           <div className="rounded border p-3 position-relative shadow-sm" style={{ height: "50vh" }}>
           <div className="d-flex align-items-center justify-content-between">
             <h5> Datasets</h5>
-            <div className="mt-1 me-2">
-              <FontAwesomeIcon icon={faPlusCircle}  style={{color:"#E30613", fontSize: '1.2em'}}/>
+            <div className="mt-1 me-2" onClick={handleOpenModalDataset}>
+              <FontAwesomeIcon icon={faPlusCircle}  style={{color:"#E30613", fontSize: '1.2em'}} />
             </div>
             </div>
             <hr style={{color:"#555"}}/>
+            <div>
+                <ul>
+                {datasets.map(dataset => (
+                    <li key={dataset.id}>{dataset.name}</li>
+                  ))}
+                </ul>
+              </div>
           </div>
           </div>
 
@@ -65,6 +102,7 @@ const AnalyseShow = () => {
 
 
       </div>
+      {showModalDataset && <AnalyseDatsetModal onCreate={handleCreateDataset} onClose={closeModal} />}
       </div>
 
 

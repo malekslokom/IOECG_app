@@ -34,26 +34,30 @@ interface Model {
     type: string; 
   }
 
+  interface ECG {
+    id: number;
+    patientId: number;
+    filepath: string;
+    recordingStartedAt: string;
+    recordingEndedAt: string;
+    recordingInitialSamplingRate: number;
+    recordingSamplingRate: number;
+    recordingDuration: number;
+    protocolDetails: any;
+    data: number[];
+
+  }
+  
   interface Dataset {
-      nom: string ;
-      dateCreation: string;
-      auteur: string;
-      description: string;    
-      type: string; 
-    }
+    id: number;
+    name: string;
+    description: string;
+    type: string;
+    ecgs: ECG[];
+  }
+  
 
-    interface Ecg {
-      idPatient: number,
-      origine_dataset_id: number
-      filepath: string,
-      recording_started_at: string;
-      recording_ended_at: string;
-      recording_initial_sampling_rate: number;
-      recording_sampling_rate: number;
-      recording_duration: string;
-      protocol_details: string;
-    }
-
+    
 interface Rapport {
   dateCreation: string;
   nom: string ;
