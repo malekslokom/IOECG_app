@@ -36,6 +36,7 @@ interface Model {
 
   interface ECG {
     id: number;
+    origineDatasetId:number;
     patientId: number;
     filepath: string;
     recordingStartedAt: string;
@@ -56,6 +57,13 @@ interface Model {
     ecgs: ECG[];
   }
   
+
+  interface DatasetECG {
+    id: number;
+    idDataset: string;
+    idEcg: string;
+    type: string;
+  }
 
     
 interface Rapport {

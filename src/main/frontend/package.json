@@ -28,11 +28,8 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-plotly.js": "^2.6.0",
-=======
     "react-paginate": "^8.2.0",
->>>>>>> a0470c834facd75f82bdb61882c8151a6a58fdf4
     "react-router-dom": "^6.22.2",
     "style-loader": "^3.3.4",
     "styled-components": "^6.1.8",

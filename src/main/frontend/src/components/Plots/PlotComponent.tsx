@@ -21,7 +21,7 @@ const PlotComponent: React.FC<PlotProps> = ({ data }) => {
         },
       ]}
       layout={{
-        width: 600,
+        width: 550,
         height: 300,
         title: 'ECG Plot',
         xaxis: { title: 'Time' },

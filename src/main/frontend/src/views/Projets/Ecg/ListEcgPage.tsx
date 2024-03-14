@@ -3,52 +3,58 @@ import ElementsList from "../../../components/ElementsList/ElementsLits";
 import ListPage from "../../../components/ListPage/ListPage";
 
 function ListEcgPage() {
-  const [listEcg, setListEcg] = useState<Ecg[]>([
+  const [listEcg, setListEcg] = useState<ECG[]>([
     {
-      idPatient: 1,
-      origine_dataset_id: 1,
+      id:1,
+      patientId: 1,
+      origineDatasetId: 1,
       filepath: "/chemin/vers/fichier1",
-      recording_started_at: "15/03/22",
-      recording_ended_at: "20/04/22",
-      recording_initial_sampling_rate: 100,
-      recording_sampling_rate: 100,
-      recording_duration: "1:00:00",
-      protocol_details: "Détails du protocole 1",
+      recordingStartedAt: "15/03/22",
+      recordingEndedAt: "20/04/22",
+      recordingInitialSamplingRate: 100,
+      recordingSamplingRate: 100,
+      recordingDuration: 1,
+      protocolDetails: "Détails du protocole 1",
+      data: []
     },
     {
-      idPatient: 2,
-      origine_dataset_id: 1,
+      id:2,
+      patientId: 2,
+      origineDatasetId: 1,
       filepath: "/chemin/vers/fichier2",
-      recording_started_at: "15/03/22",
-      recording_ended_at: "01/04/22",
-      recording_initial_sampling_rate: 100,
-      recording_sampling_rate: 100,
-      recording_duration: "1:30:00",
-      protocol_details: "Détails du protocole 2",
+      recordingStartedAt: "15/03/22",
+      recordingEndedAt: "01/04/22",
+      recordingInitialSamplingRate: 100,
+      recordingSamplingRate: 100,
+      recordingDuration: 2,
+      protocolDetails: "Détails du protocole 2",
+      data: []
     },
     {
-      idPatient: 3,
-      origine_dataset_id: 2,
+      id:3,
+      patientId: 3,
+      origineDatasetId: 2,
       filepath: "/chemin/vers/fichier3",
-      recording_started_at: "15/06/22",
-      recording_ended_at: "15/07/22",
-      recording_initial_sampling_rate: 200,
-      recording_sampling_rate: 200,
-      recording_duration: "2:00:00",
-      protocol_details: "Détails du protocole 3",
+      recordingStartedAt: "15/06/22",
+      recordingEndedAt: "15/07/22",
+      recordingInitialSamplingRate: 200,
+      recordingSamplingRate: 200,
+      recordingDuration: 3,
+      protocolDetails: "Détails du protocole 3",
+      data: []
     },
   ]);
 
   const [columns, setColumns] = useState([
-    "idPatient",
-    "origine_dataset_id",
+    "patientId",
+    "origineDatasetId",
     "filepath",
-    "recording_started_at",
-    "recording_ended_at",
-    "recording_initial_sampling_rate",
-    "recording_sampling_rate",
-    "recording_duration",
-    "protocol_details",
+    "recordingStartedAt",
+    "recordingEndedAt",
+    "recordingInitialSamplingRate",
+    "recordingSamplingRate",
+    "recordingDuration",
+    "protocolDetails",
   ]);
 
   const [showConfirmationModal, setShowConfirmationModal] =
