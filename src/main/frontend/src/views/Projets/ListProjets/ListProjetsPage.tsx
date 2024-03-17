@@ -75,7 +75,9 @@ const ListProjetsPage = () => {
   };
   /*Ouvrir une analyse */
   const handleShowProjet = (index: number) => {
-    navigate(`/projets/${index}`);
+    console.log(index);
+    let id = index + 1;
+    navigate(`/projets/${id}`);
     console.log("Projet ouverte");
   };
   return (
