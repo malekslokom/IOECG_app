@@ -16,7 +16,7 @@ import SideBar from "./components/SideBar/SideBar";
 import MesDatasetPage from "./views/Datasets/MesDatasetPage";
 import ConsulterAnalyse from "./views/Projets/Analyses/ConsulterAnalyse";
 import AccueilPage from "./views/Accueil/AccueilPage";
-import ConsulterProjetPage from "./views/ConsulterProjet/ConsulterProjetPage";
+import ConsulterProjetPage from "./views/Projets/ListProjets/ConsulterProjetPage";
 import ListEcgPage from "./views/Projets/Ecg/ListEcgPage";
 import ConsulterRapport from "./views/Projets/Rapports/ConsulterRapport";
 
@@ -54,13 +54,13 @@ function App() {
             <Route path="/projets/rapports" element={<RapportProjetPage />} />
             <Route path="/mes-catalogues" element={<MesCataloguePage />} />
             <Route path="/mes-datasets" element={<MesDatasetPage />} />
-            <Route path="/projets/consulter-projet" element={<ConsulterProjetPage/>} /> 
+            <Route path="/projets/:id" element={<ConsulterProjetPage />} />
 
             <Route path="/historique" element={<HistoriquePage />} />
             {/* Autres routes */}
             <Route path="projets/analyses/:id" element={<ConsulterAnalyse />} />
-            <Route path="projets/datasets/:id/ecg" element={<ListEcgPage/>} />
-            <Route path='projets/rapports/:id' element={<ConsulterRapport/>}/>
+            <Route path="projets/datasets/:id/ecg" element={<ListEcgPage />} />
+            <Route path="projets/rapports/:id" element={<ConsulterRapport />} />
           </Routes>
         </div>
       </BrowserRouter>

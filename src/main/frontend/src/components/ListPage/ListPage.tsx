@@ -15,12 +15,15 @@ const ListPage: React.FC<ListPageProps> = ({
   return (
     <div className="my-5">
       <div
-        className="rounded bg-white p-3 shadow-sm"
-        style={{ height: "100vh" }}
+        className="rounded p-3 shadow-sm"
+        style={{ height: "100vh", background: "var(--background-color)" }}
       >
         <div className="analyse-page">
           <div className="header">
-            <div className="d-flex align-items-center justify-content-between">
+            <div
+              style={{ color: "var(--primary-text-color)" }}
+              className="d-flex align-items-center justify-content-between"
+            >
               <h2> {title}</h2>
               {boutonVisible && (
                 <div className="mb-0">
@@ -40,7 +43,6 @@ const ListPage: React.FC<ListPageProps> = ({
                 </div>
               )}
             </div>
-            <hr style={{ color: "#555" }} />
           </div>
           <hr style={{ color: "var(--primary-text-color)" }} />
         </div>

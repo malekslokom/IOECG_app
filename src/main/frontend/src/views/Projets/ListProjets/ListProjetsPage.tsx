@@ -5,8 +5,11 @@ import { useState, useEffect } from "react";
 import CreateProjetModal from "../../../components/Modals/CreateProjetModal";
 import { fetchProjets } from "../../../services/ProjetService";
 import ConfirmationArchiverModal from "../../../components/Modals/ConfirmationArchiverModal";
+import { useNavigate } from "react-router-dom";
 
 const ListProjetsPage = () => {
+  const navigate = useNavigate();
+
   const [listProjets, setListProjets] = useState<Projet[]>([]);
   useEffect(() => {
     fetchProjets()
@@ -39,10 +42,6 @@ const ListProjetsPage = () => {
     console.log("Bouton Ajouter cliqué !");
   };
 
-  function onShow(): void {
-    console.log("Analyse ouverte");
-  }
-
   const handleCreateProjet = (newProjet: Projet) => {
     console.log("Nouveau projet créé:", newProjet);
     setListProjets([...listProjets, newProjet]);
@@ -74,7 +73,11 @@ const ListProjetsPage = () => {
     setShowConfirmationModal(false);
     setSelectedProjet(null);
   };
-
+  /*Ouvrir une analyse */
+  const handleShowProjet = (index: number) => {
+    navigate(`/projets/${index}`);
+    console.log("Projet ouverte");
+  };
   return (
     <div>
       <div className="position-relative">
@@ -94,7 +97,7 @@ const ListProjetsPage = () => {
             nameModule="projet"
             elementsList={listProjets}
             onDelete={handleDeleteProjet}
-            onShow={onShow}
+            onShow={handleShowProjet}
           />
         </div>
 

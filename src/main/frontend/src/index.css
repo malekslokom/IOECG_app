@@ -15,8 +15,10 @@
     --toggle-fg-after-hover:#cc0000;
     --border-radius: 0.25rem;
     --sidebar-item-active:#fde8e8;
-    --shadow:rgba(0,0,0,0.1)
-
+    --shadow:rgba(0,0,0,0.1);
+    --header-array-color:#F2F5F7;
+    --header-array-text-color:#03003A;
+    --array-border-color:#F2F5F7
   }
 
   [data-theme="dark"] {
@@ -32,6 +34,9 @@
     --toggle-fg-after-hover:#1677ff;
     --sidebar-item-active:rgb(137, 167, 249);
     --hover-color: #f6f6f6;
-    --shadow:rgba(255, 255, 255, 0.1)
+    --shadow:rgba(255, 255, 255, 0.1);
+    --header-array-color:#0F172A;
+    --header-array-text-color:#BFC2CA;
+    --array-border-color: #F2F5F7
 
   }

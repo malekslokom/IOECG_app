@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\Ghada\Downloads\ioecg_app\ioecg_app\src\main\backend\projet\env
+set VIRTUAL_ENV=C:\Users\Ghada\Downloads\ioecg_app\ioecg_app\src\main\backend\datasets\env
 
 if not defined PROMPT set PROMPT=$P$G
 

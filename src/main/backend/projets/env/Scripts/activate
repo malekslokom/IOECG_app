@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Ghada\Downloads\ioecg_app\ioecg_app\src\main\backend\projet\env"
+VIRTUAL_ENV="C:\Users\Ghada\Downloads\ioecg_app\ioecg_app\src\main\backend\datasets\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

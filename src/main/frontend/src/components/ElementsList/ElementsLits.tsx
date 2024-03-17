@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faEye } from "@fortawesome/free-solid-svg-icons";
 import ReactPaginate from "react-paginate";
-
+import "./ElementLists.css";
 interface ListProps {
   nameModule: string;
   columns: string[];
@@ -41,6 +41,7 @@ const ElementsList: React.FC<ListProps> = ({
               ))}
               <th></th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -76,7 +77,7 @@ const ElementsList: React.FC<ListProps> = ({
                   </>
                 )}
 
-                  {nameModule == "rapport" && (
+                {nameModule == "rapport" && (
                   <>
                     <td>{item.nom}</td>
                     <td>{item.dateCreation}</td>
@@ -85,7 +86,7 @@ const ElementsList: React.FC<ListProps> = ({
                     <td>{item.datasets.join(", ")}</td>
                     <td></td>
                   </>
-                )}
+                )}
 
                 <td>
                   <FontAwesomeIcon
