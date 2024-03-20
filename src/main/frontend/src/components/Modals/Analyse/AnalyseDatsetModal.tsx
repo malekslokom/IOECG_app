@@ -138,7 +138,7 @@ const AnalyseDatsetModal: React.FC<AnalyseDatsetModalProps> = ({ onClose, onCrea
                       <Table>
                         <tbody>
                           {dataset.ecgs.map(ecg => (
-                            <><tr key={ecg.id} className={selectedECGs.includes(ecg) ? 'selected' : ''} style={{ display: 'flex', alignItems: 'center' }}>
+                            <tr key={ecg.id} className={selectedECGs.includes(ecg) ? 'selected' : ''}>
                               <td style={{ display: 'flex', alignItems: 'center' }}>
                                 <input type="checkbox" onChange={() => handleECGSelection(ecg)} checked={selectedECGs.includes(ecg)} />
                                 <div style={{ whiteSpace: 'nowrap', marginLeft: '5px' }}>
@@ -147,9 +147,10 @@ const AnalyseDatsetModal: React.FC<AnalyseDatsetModalProps> = ({ onClose, onCrea
                                   </h6>
                                 </div>
                               </td>
-                            </tr><tr>
-                                <PlotComponent data={ecg.data} />
-                              </tr></>
+                              <td style={{ display: 'flex', alignItems: 'center' }}>
+                                  <PlotComponent  data={ecg.data} />
+                              </td>
+                            </tr>
                           ))}
                         </tbody>
                       </Table>
