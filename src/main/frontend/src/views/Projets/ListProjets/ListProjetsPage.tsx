@@ -3,7 +3,10 @@ import ListPage from "../../../components/ListPage/ListPage";
 import ElementsList from "../../../components/ElementsList/ElementsLits";
 import { useState, useEffect } from "react";
 import CreateProjetModal from "../../../components/Modals/CreateProjetModal";
-import { fetchProjets } from "../../../services/ProjetService";
+import {
+  fetchProjets,
+  getProjectWithFilter,
+} from "../../../services/ProjetService";
 import ConfirmationArchiverModal from "../../../components/Modals/ConfirmationArchiverModal";
 import { useNavigate } from "react-router-dom";
 
@@ -24,17 +27,39 @@ const ListProjetsPage = () => {
     "Version",
     "Type",
   ]);
-
+  const [filters, setFilters] = useState({
+    startDate: "",
+    endDate: "",
+    searchTerm: "",
+  });
   const [newProjetModal, setNewProjetModal] = useState<boolean>(false);
   const [showConfirmationModal, setShowConfirmationModal] =
     useState<boolean>(false);
   const [selectedProjet, setSelectedProjet] = useState<number | null>(null);
 
   useEffect(() => {
-    fetchProjets()
-      .then((data) => setListProjets(data))
-      .catch((error) => console.error("Error fetching projects:", error));
-  }, []);
+    if (filters.startDate || filters.endDate || filters.searchTerm) {
+      getProjectWithFilter(
+        filters.startDate,
+        filters.endDate,
+        filters.searchTerm
+      )
+        .then(setListProjets)
+        .catch((error) => console.error("Error fetching projects:", error));
+    } else {
+      fetchProjets()
+        .then(setListProjets)
+        .catch((error) => console.error("Error fetching projects:", error));
+    }
+  }, [filters]); // Écoute les changements de filtres
+
+  const handleFilter = (
+    startDate: string,
+    endDate: string,
+    searchTerm: string
+  ) => {
+    setFilters({ startDate, endDate, searchTerm });
+  };
 
   /*Actions relatif au modal de création */
   const buttonClick = () => {
@@ -89,6 +114,7 @@ const ListProjetsPage = () => {
           bouton="Créer"
           boutonVisible={true}
           onClick={buttonClick}
+          onFilter={handleFilter}
         />
         <div
           className="position-absolute"
