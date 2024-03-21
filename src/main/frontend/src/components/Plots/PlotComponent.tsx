@@ -21,12 +21,15 @@ const PlotComponent: React.FC<PlotProps> = ({ data }) => {
         },
       ]}
       layout={{
-        width: 550,
-        height: 300,
+        // width: 550,
+        // height: 300,
         title: 'ECG Plot',
         xaxis: { title: 'Time' },
         yaxis: { title: 'Amplitude' },
+        
       }}
+      useResizeHandler={true}
+      style={{width: "100%", height: "100%"}}
     />
   );
 };
